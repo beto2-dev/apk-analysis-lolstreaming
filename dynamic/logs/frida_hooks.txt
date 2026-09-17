@@ -1,1 +1,4 @@
-[script-error] ReferenceError: 'Java' is not defined
+[*] hooks instalados en 5133
+[System.loadLibrary] flutter
+[System.loadLibrary] dartjni
+[getPackageInfo] com.example.lol flags=0
