@@ -1,0 +1,36 @@
+# Credenciales y secretos: nunca versionar
+.env
+.env.*
+*.token
+*token*.txt
+secrets/
+*.pem
+*.p12
+*.keystore
+
+# Salidas voluminosas regenerables (se conserva lo documentado)
+static/jadx_output/
+static/apk_extracted/*
+!static/apk_extracted/AndroidManifest.xml
+!static/apk_extracted/apktool.yml
+!static/apk_extracted/original/
+!static/apk_extracted/UNKNOWN/
+
+# Temporales y sistema
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+/tmp/
+nohup.out
+
+# Entornos virtuales de python
+venv/
+.venv/
+
+# Volcados grandes intermedios que se conservan comprimidos
+*.raw
+*.heap
