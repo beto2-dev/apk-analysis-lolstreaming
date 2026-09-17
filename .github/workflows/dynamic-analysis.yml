@@ -121,23 +121,49 @@ jobs:
           "$ADB" push ~/.mitmproxy/mitmproxy-ca-cert.pem /system/etc/security/cacerts/"${H}".0 \
             || echo "advertencia: CA no instalada; el trafico TLS no se descifrara (mitmdump seguira registrando dominios)"
           "$ADB" shell chmod 644 /system/etc/security/cacerts/"${H}".0 2>/dev/null || true
-          "$ADB" shell "ls /system/etc/security/cacerts/${H}.0" || echo "confirmado: CA ausente en el almacen del sistema"
+          "$ADB" shell "ls -la /system/etc/security/cacerts/${H}.0" || echo "confirmado: CA ausente en el almacen del sistema"
+          # estabilizar la conexion adb tras el remontaje/reinicio
+          for i in 1 2 3 4 5 6; do
+            S=$("$ADB" get-state 2>/dev/null | tr -d '\r')
+            if [ "$S" = "device" ]; then echo "dispositivo estable"; break; fi
+            "$ADB" kill-server || true; "$ADB" start-server || true
+            timeout 60 "$ADB" wait-for-device || true
+            sleep 5
+          done
 
       - name: Desplegar frida-server en el dispositivo
         run: |
           ADB="$ANDROID_HOME/platform-tools/adb"
+          for i in 1 2 3 4 5 6; do
+            S=$("$ADB" get-state 2>/dev/null | tr -d '\r')
+            if [ "$S" = "device" ]; then echo "dispositivo listo"; break; fi
+            echo "dispositivo $S; recuperando conexion adb (intento $i)"
+            "$ADB" kill-server || true; "$ADB" start-server || true
+            timeout 60 "$ADB" wait-for-device || true
+            sleep 5
+          done
           FV=$(python3 -c "import frida; print(frida.__version__)")
+          echo "version de frida: $FV"
           wget -q "https://github.com/frida/frida/releases/download/${FV}/frida-server-${FV}-android-x86_64.xz" -O /tmp/fs.xz
           xz -d -f /tmp/fs.xz
           "$ADB" push /tmp/fs /data/local/tmp/frida-server
           "$ADB" shell chmod 755 /data/local/tmp/frida-server
-          nohup "$ADB" shell 'nohup /data/local/tmp/frida-server >/dev/null 2>&1 &' >/dev/null 2>&1 &
+          "$ADB" shell 'nohup /data/local/tmp/frida-server >/dev/null 2>&1 &' || true
           sleep 6
-          frida-ps -U | head -8
+          "$ADB" shell 'ps -A | grep frida' || echo "advertencia: frida-server no visible en ps"
+          frida-ps -U | head -8 || echo "advertencia: frida-ps sin respuesta"
 
       - name: Instalar y lanzar la aplicacion instrumentada
         run: |
           ADB="$ANDROID_HOME/platform-tools/adb"
+          for i in 1 2 3 4 5 6; do
+            S=$("$ADB" get-state 2>/dev/null | tr -d '\r')
+            if [ "$S" = "device" ]; then echo "dispositivo listo"; break; fi
+            echo "dispositivo $S; recuperando conexion adb (intento $i)"
+            "$ADB" kill-server || true; "$ADB" start-server || true
+            timeout 60 "$ADB" wait-for-device || true
+            sleep 5
+          done
           PKG=$("$ANDROID_HOME/build-tools/30.0.3/aapt" dump badging sample.apk | sed -n "s/^package: name='\([^']*\)'.*/\1/p")
           echo "paquete instalado: $PKG"
           echo "PKG=$PKG" >> "$GITHUB_ENV"
@@ -146,12 +172,13 @@ jobs:
             || { echo "frida fallo, lanzamiento alternativo con monkey"; "$ADB" shell monkey -p "$PKG" -c android.intent.category.LAUNCHER 1; }
 
       - name: Tiempo de observacion y recoleccion de datos
+        if: always()
         run: |
           ADB="$ANDROID_HOME/platform-tools/adb"
           sleep 90
           "$ADB" logcat -d -v time > dynamic/logs/logcat.txt 2>&1 || true
           "$ADB" logcat -d -b crash -v time > dynamic/logs/logcat_crash.txt 2>&1 || true
-          "$ADB" root && sleep 3
+          "$ADB" root && sleep 3 || true
           "$ADB" shell "find /data/data/$PKG -type f" > dynamic/logs/archivos_app.txt 2>&1 || true
           "$ADB" shell "cd /data/data && tar -cf - --exclude='*/cache/*' $PKG 2>/dev/null" | tar -xf - -C dynamic/files_app 2>/dev/null || true
           echo "archivos recuperados:"; find dynamic/files_app -type f | head -30
@@ -160,6 +187,7 @@ jobs:
           find dynamic -type f -size +15M -exec gzip -f {} \; || true
 
       - name: Subir artefactos de la ejecucion
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: resultados-dinamicos
@@ -167,6 +195,7 @@ jobs:
           if-no-files-found: warn
 
       - name: Publicar resultados en el repositorio
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
