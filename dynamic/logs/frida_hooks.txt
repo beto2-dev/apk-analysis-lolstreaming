@@ -1,0 +1,1 @@
+[script-error] ReferenceError: 'Java' is not defined
