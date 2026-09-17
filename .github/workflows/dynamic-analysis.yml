@@ -36,6 +36,15 @@ jobs:
         run: |
           echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd -n auditoria -k "system-images;android-30;google_apis;x86_64" -d pixel_4
 
+      - name: Habilitar acceso a KVM
+        run: |
+          ls -l /dev/kvm || echo "advertencia: /dev/kvm no existe"
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+          ls -l /dev/kvm
+          "$ANDROID_HOME/emulator/emulator" -accel-check || true
+
       - name: Iniciar mitmdump en el host
         run: |
           mkdir -p dynamic/captures dynamic/logs dynamic/files_app
@@ -48,16 +57,25 @@ jobs:
       - name: Arrancar emulador (headless con proxy hacia el host)
         run: |
           ADB="$ANDROID_HOME/platform-tools/adb"
+          "$ADB" kill-server || true
+          "$ADB" start-server || true
           nohup "$ANDROID_HOME/emulator/emulator" -avd auditoria \
             -no-window -no-audio -no-boot-anim -no-snapshot -no-metrics \
             -gpu swiftshader_indirect -writable-system \
             -http-proxy http://10.0.2.2:8080 > dynamic/logs/emulator.txt 2>&1 &
-          timeout 600 "$ADB" wait-for-device
-          for i in $(seq 1 90); do
+          timeout 420 "$ADB" wait-for-device || true
+          BOOT=0
+          for i in $(seq 1 60); do
             B=$("$ADB" shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
-            if [ "$B" = "1" ]; then echo "boot completado tras $((i*10))s"; break; fi
+            if [ "$B" = "1" ]; then echo "boot completado tras $((i*10))s"; BOOT=1; break; fi
             sleep 10
           done
+          if [ "$BOOT" != "1" ]; then
+            echo "## el emulador no completo el arranque; registro del emulador:"
+            tail -60 dynamic/logs/emulator.txt || true
+            "$ADB" devices || true
+            exit 1
+          fi
           "$ADB" devices
 
       - name: Instalar CA de mitmproxy en el almacen del sistema
