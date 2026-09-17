@@ -1,4 +1,4 @@
-[*] hooks instalados en 5133
+[*] hooks instalados en 4750
 [System.loadLibrary] flutter
 [System.loadLibrary] dartjni
 [getPackageInfo] com.example.lol flags=0

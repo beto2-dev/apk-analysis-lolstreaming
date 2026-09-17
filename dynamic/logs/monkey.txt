@@ -1,0 +1,30 @@
+  bash arg: -p
+  bash arg: com.example.lol
+  bash arg: --throttle
+  bash arg: 300
+  bash arg: --pct-syskeys
+  bash arg: 0
+  bash arg: 400
+args: [-p, com.example.lol, --throttle, 300, --pct-syskeys, 0, 400]
+ arg: "-p"
+ arg: "com.example.lol"
+ arg: "--throttle"
+ arg: "300"
+ arg: "--pct-syskeys"
+ arg: "0"
+ arg: "400"
+data="com.example.lol"
+arg="--throttle" mCurArgData="null" mNextArg=3 argwas="--throttle" nextarg="300"
+data="300"
+arg="--pct-syskeys" mCurArgData="null" mNextArg=5 argwas="--pct-syskeys" nextarg="0"
+data="0"
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+    // Injection Failed
+Events injected: 400
+## Network stats: elapsed time=37665ms (0ms mobile, 0ms wifi, 37665ms not connected)

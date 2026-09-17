@@ -1,917 +1,963 @@
-[21:05:10.061] Loading script scripts/dynamic/flow_logger.py
-[21:05:10.062] HTTP(S) proxy listening at 127.0.0.1:8080.
-[21:05:14.668][127.0.0.1:35130] client connect
-[21:05:14.669][127.0.0.1:35130] client disconnect
-[21:05:49.145][127.0.0.1:45208] client connect
-[21:05:49.152][127.0.0.1:45208] error establishing server connection: [Errno 111] Connect call failed ('127.0.0.53', 853)
-127.0.0.1:45208: CONNECT 127.0.0.53:853
+[21:27:00.316] Loading script scripts/dynamic/flow_logger.py
+[21:27:00.317] HTTP(S) proxy listening at 127.0.0.1:8080.
+[21:27:04.923][127.0.0.1:37556] client connect
+[21:27:04.924][127.0.0.1:37556] client disconnect
+[21:27:37.601][127.0.0.1:55968] client connect
+[21:27:37.606][127.0.0.1:55968] error establishing server connection: [Errno 111] Connect call failed ('127.0.0.53', 853)
+127.0.0.1:55968: CONNECT 127.0.0.53:853
               << 502 Bad Gateway 221b
-[21:05:49.157][127.0.0.1:45208] client disconnect
-[21:05:49.486][127.0.0.1:45222] client connect
-[21:05:49.502][127.0.0.1:45222] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:45222: GET http://connectivitycheck.gstatic.com/generate_204
+[21:27:37.612][127.0.0.1:55968] client disconnect
+[21:27:37.846][127.0.0.1:55974] client connect
+[21:27:37.846][127.0.0.1:55982] client connect
+[21:27:37.875][127.0.0.1:55982] server connect 142.251.155.119:443
+[21:27:37.894][127.0.0.1:55974] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+127.0.0.1:55974: GET http://connectivitycheck.gstatic.com/generate_204
               << 204 No Content 0b
-[21:05:49.515][127.0.0.1:45222] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:05:49.518][127.0.0.1:45222] client disconnect
-[21:05:49.518][127.0.0.1:45224] client connect
-[21:05:49.527][127.0.0.1:45224] server connect 142.251.150.119:443
-[21:05:49.698][127.0.0.1:45224] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:05:49.702][127.0.0.1:45224] client disconnect
-[21:05:49.702][127.0.0.1:45226] client connect
-[21:05:49.703][127.0.0.1:45224] server disconnect 142.251.150.119:443
-[21:05:49.711][127.0.0.1:45226] server connect www.google.com:80 (142.251.155.119:80)
-127.0.0.1:45226: GET http://www.google.com/gen_204
+[21:27:37.938][127.0.0.1:55974] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:27:37.939][127.0.0.1:55974] client disconnect
+[21:27:37.964][127.0.0.1:55982] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:37.964][127.0.0.1:55982] client disconnect
+[21:27:37.965][127.0.0.1:55982] server disconnect 142.251.155.119:443
+[21:27:38.051][127.0.0.1:44932] client connect
+[21:27:38.084][127.0.0.1:44932] server connect www.google.com:80 (142.251.153.119:80)
+127.0.0.1:44932: GET http://www.google.com/gen_204
               << 204 No Content 0b
-[21:05:49.731][127.0.0.1:45226] server disconnect www.google.com:80 (142.251.155.119:80)
-[21:05:49.734][127.0.0.1:45226] client disconnect
-[21:05:50.853][127.0.0.1:45232] client connect
-[21:05:50.859][127.0.0.1:45236] client connect
-[21:05:50.859][127.0.0.1:45232] server connect 142.251.153.119:443
-[21:05:50.893][127.0.0.1:45236] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:45236: GET http://connectivitycheck.gstatic.com/generate_204
+[21:27:38.118][127.0.0.1:44932] server disconnect www.google.com:80 (142.251.153.119:80)
+[21:27:38.121][127.0.0.1:44932] client disconnect
+[21:27:40.037][127.0.0.1:44934] client connect
+[21:27:40.048][127.0.0.1:44948] client connect
+[21:27:40.066][127.0.0.1:44948] server connect 142.251.156.119:443
+[21:27:40.077][127.0.0.1:44934] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+127.0.0.1:44934: GET http://connectivitycheck.gstatic.com/generate_204
               << 204 No Content 0b
-[21:05:50.905][127.0.0.1:45236] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:05:50.917][127.0.0.1:45236] client disconnect
-[21:05:50.932][127.0.0.1:45232] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:05:50.933][127.0.0.1:45232] client disconnect
-[21:05:50.934][127.0.0.1:45232] server disconnect 142.251.153.119:443
-[21:05:50.969][127.0.0.1:45250] client connect
-[21:05:50.984][127.0.0.1:45250] server connect www.google.com:80 (142.251.152.119:80)
-127.0.0.1:45250: GET http://www.google.com/gen_204
+[21:27:40.117][127.0.0.1:44934] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:27:40.118][127.0.0.1:44934] client disconnect
+[21:27:40.177][127.0.0.1:44948] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:40.183][127.0.0.1:44948] client disconnect
+[21:27:40.184][127.0.0.1:44948] server disconnect 142.251.156.119:443
+[21:27:40.184][127.0.0.1:44958] client connect
+[21:27:40.212][127.0.0.1:44958] server connect www.google.com:80 (142.251.150.119:80)
+127.0.0.1:44958: GET http://www.google.com/gen_204
               << 204 No Content 0b
-[21:05:51.005][127.0.0.1:45250] server disconnect www.google.com:80 (142.251.152.119:80)
-[21:05:51.008][127.0.0.1:45250] client disconnect
-[21:05:53.316][127.0.0.1:45258] client connect
-[21:05:53.363][127.0.0.1:45258] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:45258: GET http://connectivitycheck.gstatic.com/generate_204
-              << 204 No Content 0b
-[21:05:53.377][127.0.0.1:45258] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:05:53.378][127.0.0.1:45258] client disconnect
-[21:05:53.443][127.0.0.1:45264] client connect
-[21:05:53.452][127.0.0.1:45264] server connect 142.251.154.119:443
-[21:05:53.477][127.0.0.1:45264] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:05:53.478][127.0.0.1:45264] client disconnect
-[21:05:53.479][127.0.0.1:45264] server disconnect 142.251.154.119:443
-[21:05:53.489][127.0.0.1:45266] client connect
-[21:05:53.497][127.0.0.1:45266] server connect www.google.com:80 (142.251.153.119:80)
-127.0.0.1:45266: GET http://www.google.com/gen_204
-              << 204 No Content 0b
-[21:05:53.515][127.0.0.1:45266] server disconnect www.google.com:80 (142.251.153.119:80)
-[21:05:53.516][127.0.0.1:45266] client disconnect
-[21:05:54.875][127.0.0.1:45272] client connect
-[21:05:54.882][127.0.0.1:45272] server connect 192.178.218.94:443
-[21:05:55.129][127.0.0.1:45272] Client TLS handshake failed. The client does not trust the proxy's certificate for www.gstatic.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:05:55.129][127.0.0.1:45272] client disconnect
-[21:05:55.130][127.0.0.1:45272] server disconnect 192.178.218.94:443
-[21:05:55.202][127.0.0.1:45282] client connect
-[21:05:55.207][127.0.0.1:45282] server connect 192.178.218.94:443
-[21:05:55.233][127.0.0.1:45298] client connect
-[21:05:55.790][127.0.0.1:45282] Client TLS handshake failed. The client does not trust the proxy's certificate for www.gstatic.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:05:55.791][127.0.0.1:45282] client disconnect
-[21:05:55.794][127.0.0.1:45282] server disconnect 192.178.218.94:443
-[21:05:55.831][127.0.0.1:45308] client connect
-[21:05:55.840][127.0.0.1:45308] server connect 172.217.113.4:443
-[21:05:56.062][127.0.0.1:45314] client connect
-[21:05:56.067][127.0.0.1:45314] server connect 192.178.218.94:443
-[21:05:56.296][127.0.0.1:45314] Client TLS handshake failed. The client does not trust the proxy's certificate for www.gstatic.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:05:56.297][127.0.0.1:45314] client disconnect
-[21:05:56.298][127.0.0.1:45314] server disconnect 192.178.218.94:443
-[21:05:56.311][127.0.0.1:45308] Client TLS handshake failed. The client does not trust the proxy's certificate for firebaseinstallations.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:05:56.312][127.0.0.1:45308] client disconnect
-[21:05:56.312][127.0.0.1:45308] server disconnect 172.217.113.4:443
-[21:05:56.317][127.0.0.1:45318] client connect
-[21:05:56.326][127.0.0.1:45318] server connect 172.217.118.4:443
-[21:05:56.735][127.0.0.1:45328] client connect
-[21:05:56.744][127.0.0.1:45328] server connect 142.251.154.119:443
-[21:05:56.754][127.0.0.1:45340] client connect
-[21:05:56.800][127.0.0.1:45340] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:45340: GET http://connectivitycheck.gstatic.com/generate_204
-              << 204 No Content 0b
-[21:05:56.814][127.0.0.1:45340] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:05:56.817][127.0.0.1:45318] Client TLS handshake failed. The client does not trust the proxy's certificate for firebaseinstallations.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:05:56.821][127.0.0.1:45340] client disconnect
-[21:05:56.823][127.0.0.1:45318] client disconnect
-[21:05:56.825][127.0.0.1:45318] server disconnect 172.217.118.4:443
-[21:05:56.826][127.0.0.1:45328] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:05:56.829][127.0.0.1:45328] client disconnect
-[21:05:56.830][127.0.0.1:45328] server disconnect 142.251.154.119:443
-[21:05:56.894][127.0.0.1:45344] client connect
-[21:05:56.914][127.0.0.1:45344] server connect www.google.com:80 (142.251.153.119:80)
-127.0.0.1:45344: GET http://www.google.com/gen_204
-              << 204 No Content 0b
-[21:05:56.926][127.0.0.1:45344] server disconnect www.google.com:80 (142.251.153.119:80)
-[21:05:56.929][127.0.0.1:45344] client disconnect
-[21:05:57.883][127.0.0.1:51066] client connect
-[21:05:57.894][127.0.0.1:51076] client connect
-[21:05:57.899][127.0.0.1:51066] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:05:57.903][127.0.0.1:51076] server connect 142.251.157.119:443
-127.0.0.1:51066: GET http://connectivitycheck.gstatic.com/generate_204
-              << 204 No Content 0b
-[21:05:57.910][127.0.0.1:51066] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:05:57.915][127.0.0.1:51066] client disconnect
-[21:05:57.936][127.0.0.1:51076] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:05:57.938][127.0.0.1:51076] client disconnect
-[21:05:57.939][127.0.0.1:51076] server disconnect 142.251.157.119:443
-[21:05:58.309][127.0.0.1:51088] client connect
-[21:05:58.321][127.0.0.1:51088] server connect play.googleapis.com:80 (172.217.112.4:80)
-127.0.0.1:51088: GET http://play.googleapis.com/generate_204
-              << 204 No Content 0b
-[21:05:58.328][127.0.0.1:51088] server disconnect play.googleapis.com:80 (172.217.112.4:80)
-[21:05:58.329][127.0.0.1:51088] client disconnect
-[21:05:58.380][127.0.0.1:51092] client connect
-[21:05:58.391][127.0.0.1:51092] server connect 172.217.113.4:443
-[21:05:58.840][127.0.0.1:51092] Client TLS handshake failed. The client does not trust the proxy's certificate for firebaseinstallations.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:05:58.844][127.0.0.1:51104] client connect
-[21:05:58.847][127.0.0.1:51092] client disconnect
-[21:05:58.851][127.0.0.1:51092] server disconnect 172.217.113.4:443
-[21:05:58.860][127.0.0.1:51104] server connect 172.217.118.4:443
-[21:05:59.003][127.0.0.1:51114] client connect
-[21:05:59.012][127.0.0.1:51114] error establishing server connection: [Errno 101] Network is unreachable
-127.0.0.1:51114: CONNECT 2001:4860:482c:7700:::443
+[21:27:40.248][127.0.0.1:44958] server disconnect www.google.com:80 (142.251.150.119:80)
+[21:27:40.249][127.0.0.1:44958] client disconnect
+[21:27:42.552][127.0.0.1:44962] client connect
+[21:27:42.555][127.0.0.1:44974] client connect
+[21:27:42.561][127.0.0.1:44974] error establishing server connection: [Errno 101] Network is unreachable
+127.0.0.1:44974: CONNECT 2001:4860:4829:7700:::443
               << 502 Bad Gateway 217b
-[21:05:59.019][127.0.0.1:51114] client disconnect
-[21:05:59.259][127.0.0.1:51116] client connect
-[21:05:59.267][127.0.0.1:51130] client connect
-[21:05:59.274][127.0.0.1:51130] server connect 142.251.154.119:443
-[21:05:59.277][127.0.0.1:51116] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:51116: GET http://connectivitycheck.gstatic.com/generate_204
+[21:27:42.566][127.0.0.1:44974] client disconnect
+[21:27:42.581][127.0.0.1:44986] client connect
+[21:27:42.600][127.0.0.1:44986] server connect 142.251.155.119:443
+[21:27:42.604][127.0.0.1:44962] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+127.0.0.1:44962: GET http://connectivitycheck.gstatic.com/generate_204
               << 204 No Content 0b
-[21:05:59.285][127.0.0.1:51116] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:05:59.286][127.0.0.1:51116] client disconnect
-[21:05:59.344][127.0.0.1:51130] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:05:59.345][127.0.0.1:51130] client disconnect
-[21:05:59.346][127.0.0.1:51130] server disconnect 142.251.154.119:443
-[21:05:59.352][127.0.0.1:51104] Client TLS handshake failed. The client does not trust the proxy's certificate for firebaseinstallations.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:05:59.353][127.0.0.1:51104] client disconnect
-[21:05:59.353][127.0.0.1:51104] server disconnect 172.217.118.4:443
-[21:05:59.450][127.0.0.1:51136] client connect
-[21:05:59.455][127.0.0.1:51136] server connect 172.217.117.4:443
-[21:05:59.711][127.0.0.1:51142] client connect
-[21:05:59.724][127.0.0.1:51142] server connect www.google.com:80 (142.251.153.119:80)
-127.0.0.1:51142: GET http://www.google.com/gen_204
+[21:27:42.653][127.0.0.1:44962] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:27:42.655][127.0.0.1:44962] client disconnect
+[21:27:42.660][127.0.0.1:44986] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:42.661][127.0.0.1:44986] client disconnect
+[21:27:42.662][127.0.0.1:44986] server disconnect 142.251.155.119:443
+[21:27:42.798][127.0.0.1:44996] client connect
+[21:27:42.825][127.0.0.1:44996] server connect play.googleapis.com:80 (172.217.118.4:80)
+127.0.0.1:44996: GET http://play.googleapis.com/generate_204
               << 204 No Content 0b
-[21:05:59.745][127.0.0.1:51142] server disconnect www.google.com:80 (142.251.153.119:80)
-[21:05:59.746][127.0.0.1:51142] client disconnect
-[21:06:00.144][127.0.0.1:51154] client connect
-[21:06:00.151][127.0.0.1:51154] server connect 172.217.117.4:443
-[21:06:00.222][127.0.0.1:51136] Client TLS handshake failed. The client does not trust the proxy's certificate for youtubei.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:00.226][127.0.0.1:51136] client disconnect
-[21:06:00.227][127.0.0.1:51136] server disconnect 172.217.117.4:443
-[21:06:00.425][127.0.0.1:51154] Client TLS handshake failed. The client does not trust the proxy's certificate for youtubei.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:00.429][127.0.0.1:51154] client disconnect
-[21:06:00.430][127.0.0.1:51154] server disconnect 172.217.117.4:443
-[21:06:01.482][127.0.0.1:51166] client connect
-[21:06:01.489][127.0.0.1:51166] server connect 173.194.45.188:5228
-[21:06:01.628][127.0.0.1:51182] client connect
-[21:06:01.633][127.0.0.1:51182] server connect 172.217.117.4:443
-[21:06:01.930][127.0.0.1:51182] Client TLS handshake failed. The client does not trust the proxy's certificate for youtubei.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:01.931][127.0.0.1:51182] client disconnect
-[21:06:01.932][127.0.0.1:51182] server disconnect 172.217.117.4:443
-[21:06:01.932][127.0.0.1:51166] Client TLS handshake failed. The client does not trust the proxy's certificate for mtalk.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:01.933][127.0.0.1:51166] client disconnect
-[21:06:01.934][127.0.0.1:51166] server disconnect 173.194.45.188:5228
-[21:06:01.947][127.0.0.1:51190] client connect
-[21:06:01.949][127.0.0.1:51190] error establishing server connection: [Errno 101] Network is unreachable
-127.0.0.1:51190: CONNECT 2607:f8b0:4004:c1f::bc:5228
+[21:27:42.846][127.0.0.1:44996] server disconnect play.googleapis.com:80 (172.217.118.4:80)
+[21:27:42.852][127.0.0.1:44996] client disconnect
+[21:27:46.193][127.0.0.1:44998] client connect
+[21:27:46.234][127.0.0.1:44998] server connect 142.250.152.94:443
+[21:27:46.347][127.0.0.1:44998] Client TLS handshake failed. The client does not trust the proxy's certificate for www.gstatic.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:46.348][127.0.0.1:44998] client disconnect
+[21:27:46.349][127.0.0.1:44998] server disconnect 142.250.152.94:443
+[21:27:46.403][127.0.0.1:45012] client connect
+[21:27:47.273][127.0.0.1:45026] client connect
+[21:27:47.273][127.0.0.1:45040] client connect
+[21:27:47.279][127.0.0.1:45056] client connect
+[21:27:47.283][127.0.0.1:45072] client connect
+[21:27:47.294][127.0.0.1:45040] server connect 142.251.157.119:443
+[21:27:47.298][127.0.0.1:45056] server connect 142.251.154.119:443
+[21:27:47.326][127.0.0.1:45026] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:27:47.327][127.0.0.1:45072] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:27:47.352][127.0.0.1:45056] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:47.353][127.0.0.1:45056] client disconnect
+[21:27:47.356][127.0.0.1:45056] server disconnect 142.251.154.119:443
+127.0.0.1:45072: GET http://connectivitycheck.gstatic.com/generate_204
+              << 204 No Content 0b
+[21:27:47.359][127.0.0.1:45072] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+127.0.0.1:45026: GET http://connectivitycheck.gstatic.com/generate_204
+              << 204 No Content 0b
+[21:27:47.361][127.0.0.1:45072] client disconnect
+[21:27:47.363][127.0.0.1:45026] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:27:47.364][127.0.0.1:45026] client disconnect
+[21:27:47.380][127.0.0.1:45076] client connect
+[21:27:47.411][127.0.0.1:45076] server connect www.google.com:80 (142.251.155.119:80)
+127.0.0.1:45076: GET http://www.google.com/gen_204
+              << 204 No Content 0b
+[21:27:47.439][127.0.0.1:45076] server disconnect www.google.com:80 (142.251.155.119:80)
+[21:27:47.441][127.0.0.1:45076] client disconnect
+[21:27:47.567][127.0.0.1:45040] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:47.573][127.0.0.1:45090] client connect
+[21:27:47.573][127.0.0.1:45102] client connect
+[21:27:47.574][127.0.0.1:45040] client disconnect
+[21:27:47.575][127.0.0.1:45040] server disconnect 142.251.157.119:443
+[21:27:47.592][127.0.0.1:45090] server connect 172.217.119.4:443
+[21:27:47.593][127.0.0.1:45102] server connect www.google.com:80 (142.251.152.119:80)
+127.0.0.1:45102: GET http://www.google.com/gen_204
+              << 204 No Content 0b
+[21:27:47.640][127.0.0.1:45102] server disconnect www.google.com:80 (142.251.152.119:80)
+[21:27:47.641][127.0.0.1:45102] client disconnect
+[21:27:47.757][127.0.0.1:45110] client connect
+[21:27:47.761][127.0.0.1:45110] error establishing server connection: [Errno 101] Network is unreachable
+127.0.0.1:45110: CONNECT 2607:f8b0:4001:c19::5e:443
+              << 502 Bad Gateway 218b
+[21:27:47.765][127.0.0.1:45110] client disconnect
+[21:27:48.101][127.0.0.1:44174] client connect
+[21:27:48.106][127.0.0.1:45090] Client TLS handshake failed. The client does not trust the proxy's certificate for firebaseinstallations.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:48.107][127.0.0.1:45090] client disconnect
+[21:27:48.107][127.0.0.1:45090] server disconnect 172.217.119.4:443
+[21:27:48.142][127.0.0.1:44174] server connect 142.250.152.94:443
+[21:27:48.725][127.0.0.1:44186] client connect
+[21:27:48.742][127.0.0.1:44186] server connect 172.217.119.4:443
+[21:27:48.746][127.0.0.1:44174] Client TLS handshake failed. The client does not trust the proxy's certificate for www.gstatic.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:48.747][127.0.0.1:44174] client disconnect
+[21:27:48.748][127.0.0.1:44174] server disconnect 142.250.152.94:443
+[21:27:48.764][127.0.0.1:44200] client connect
+[21:27:48.794][127.0.0.1:44200] server connect 142.250.152.94:443
+[21:27:49.258][127.0.0.1:44200] Client TLS handshake failed. The client does not trust the proxy's certificate for www.gstatic.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:49.259][127.0.0.1:44200] client disconnect
+[21:27:49.260][127.0.0.1:44200] server disconnect 142.250.152.94:443
+[21:27:49.329][127.0.0.1:44210] client connect
+[21:27:49.367][127.0.0.1:44210] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:27:49.369][127.0.0.1:44216] client connect
+[21:27:49.388][127.0.0.1:44216] server connect 142.251.153.119:443
+127.0.0.1:44210: GET http://connectivitycheck.gstatic.com/generate_204
+              << 204 No Content 0b
+[21:27:49.399][127.0.0.1:44210] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:27:49.399][127.0.0.1:44186] Client TLS handshake failed. The client does not trust the proxy's certificate for firebaseinstallations.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:49.400][127.0.0.1:44210] client disconnect
+[21:27:49.400][127.0.0.1:44186] client disconnect
+[21:27:49.401][127.0.0.1:44186] server disconnect 172.217.119.4:443
+[21:27:49.423][127.0.0.1:44216] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:49.424][127.0.0.1:44216] client disconnect
+[21:27:49.425][127.0.0.1:44216] server disconnect 142.251.153.119:443
+[21:27:49.436][127.0.0.1:44226] client connect
+[21:27:49.465][127.0.0.1:44226] server connect www.google.com:80 (142.251.153.119:80)
+127.0.0.1:44226: GET http://www.google.com/gen_204
+              << 204 No Content 0b
+[21:27:49.498][127.0.0.1:44226] server disconnect www.google.com:80 (142.251.153.119:80)
+[21:27:49.499][127.0.0.1:44226] client disconnect
+[21:27:50.094][127.0.0.1:44236] client connect
+[21:27:50.114][127.0.0.1:44236] server connect 172.217.119.4:443
+[21:27:50.428][127.0.0.1:44236] Client TLS handshake failed. The client does not trust the proxy's certificate for firebaseinstallations.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:50.430][127.0.0.1:44236] client disconnect
+[21:27:50.431][127.0.0.1:44236] server disconnect 172.217.119.4:443
+[21:27:50.452][127.0.0.1:44240] client connect
+[21:27:50.472][127.0.0.1:44240] server connect 172.217.118.4:443
+[21:27:51.154][127.0.0.1:44240] Client TLS handshake failed. The client does not trust the proxy's certificate for firebaseinstallations.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:51.156][127.0.0.1:44240] client disconnect
+[21:27:51.156][127.0.0.1:44240] server disconnect 172.217.118.4:443
+[21:27:51.198][127.0.0.1:44250] client connect
+[21:27:51.218][127.0.0.1:44250] server connect 172.217.117.4:443
+[21:27:51.529][127.0.0.1:44250] Client TLS handshake failed. The client does not trust the proxy's certificate for youtubei.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:51.531][127.0.0.1:44250] client disconnect
+[21:27:51.534][127.0.0.1:44250] server disconnect 172.217.117.4:443
+[21:27:51.703][127.0.0.1:44260] client connect
+[21:27:51.730][127.0.0.1:44260] server connect 74.125.202.188:5228
+[21:27:51.869][127.0.0.1:44266] client connect
+[21:27:51.885][127.0.0.1:44266] server connect 172.217.117.4:443
+[21:27:52.039][127.0.0.1:44266] Client TLS handshake failed. The client does not trust the proxy's certificate for youtubei.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:52.040][127.0.0.1:44260] Client TLS handshake failed. The client does not trust the proxy's certificate for mtalk.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:52.043][127.0.0.1:44266] client disconnect
+[21:27:52.046][127.0.0.1:44266] server disconnect 172.217.117.4:443
+[21:27:52.046][127.0.0.1:44260] client disconnect
+[21:27:52.051][127.0.0.1:44260] server disconnect 74.125.202.188:5228
+[21:27:52.067][127.0.0.1:44272] client connect
+[21:27:52.070][127.0.0.1:44272] error establishing server connection: [Errno 101] Network is unreachable
+127.0.0.1:44272: CONNECT 2607:f8b0:4001:c05::bc:5228
               << 502 Bad Gateway 219b
-[21:06:01.950][127.0.0.1:51190] client disconnect
-[21:06:01.970][127.0.0.1:51196] client connect
-[21:06:01.978][127.0.0.1:51196] server connect 142.251.151.4:443
-[21:06:02.375][127.0.0.1:51200] client connect
-[21:06:02.388][127.0.0.1:51200] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:51200: GET http://connectivitycheck.gstatic.com/generate_204
+[21:27:52.072][127.0.0.1:44272] client disconnect
+[21:27:52.111][127.0.0.1:44288] client connect
+[21:27:52.160][127.0.0.1:44288] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:27:52.184][127.0.0.1:44302] client connect
+[21:27:52.191][127.0.0.1:44302] error establishing server connection: [Errno 101] Network is unreachable
+127.0.0.1:44302: CONNECT 2001:4860:4827:7700:::443
+              << 502 Bad Gateway 217b
+127.0.0.1:44288: GET http://connectivitycheck.gstatic.com/generate_204
               << 204 No Content 0b
-[21:06:02.397][127.0.0.1:51200] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:06:02.398][127.0.0.1:51200] client disconnect
-[21:06:02.435][127.0.0.1:51202] client connect
-[21:06:02.443][127.0.0.1:51202] server connect 142.251.157.119:443
-[21:06:02.494][127.0.0.1:51202] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:02.494][127.0.0.1:51202] client disconnect
-[21:06:02.495][127.0.0.1:51202] server disconnect 142.251.157.119:443
-127.0.0.1:51196: GET https://142.251.151.4/csi_204?v=3&s=youtube_android&act… HTTP/2.0
+[21:27:52.202][127.0.0.1:44288] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:27:52.202][127.0.0.1:44302] client disconnect
+[21:27:52.205][127.0.0.1:44316] client connect
+[21:27:52.208][127.0.0.1:44288] client disconnect
+[21:27:52.222][127.0.0.1:44316] server connect 142.251.157.119:443
+[21:27:52.563][127.0.0.1:44316] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:52.565][127.0.0.1:44316] client disconnect
+[21:27:52.566][127.0.0.1:44316] server disconnect 142.251.157.119:443
+[21:27:52.570][127.0.0.1:44320] client connect
+[21:27:52.599][127.0.0.1:44320] server connect 192.178.209.156:443
+[21:27:52.612][127.0.0.1:44324] client connect
+[21:27:52.617][127.0.0.1:44332] client connect
+[21:27:52.639][127.0.0.1:44332] server connect www.google.com:80 (142.251.152.119:80)
+[21:27:52.650][127.0.0.1:44324] server connect 64.233.177.188:5228
+127.0.0.1:44332: GET http://www.google.com/gen_204
+              << 204 No Content 0b
+[21:27:52.661][127.0.0.1:44332] server disconnect www.google.com:80 (142.251.152.119:80)
+[21:27:52.662][127.0.0.1:44332] client disconnect
+[21:27:53.013][127.0.0.1:44340] client connect
+[21:27:53.023][127.0.0.1:44346] client connect
+[21:27:53.035][127.0.0.1:44340] server connect 172.217.118.4:443
+[21:27:53.046][127.0.0.1:44346] server connect 142.251.155.4:443
+127.0.0.1:44320: GET https://192.178.209.156/pagead/conversion/1001680686/?b…
+              << 200 OK 0b
+127.0.0.1:44346: GET https://142.251.155.4/csi_204?v=3&s=youtube_android&act… HTTP/2.0
      << HTTP/2.0 204 No Content 0b
-[21:06:02.508][127.0.0.1:51210] client connect
-[21:06:02.527][127.0.0.1:51220] client connect
-[21:06:02.536][127.0.0.1:51220] server connect www.google.com:80 (142.251.152.119:80)
-127.0.0.1:51220: GET http://www.google.com/gen_204
-              << 204 No Content 0b
-[21:06:02.557][127.0.0.1:51220] server disconnect www.google.com:80 (142.251.152.119:80)
-[21:06:02.562][127.0.0.1:51220] client disconnect
-[21:06:02.630][127.0.0.1:51210] server connect 192.178.234.188:443
-[21:06:02.676][127.0.0.1:51236] client connect
-[21:06:02.690][127.0.0.1:51236] server connect 172.217.113.4:443
-127.0.0.1:51236: POST https://172.217.113.4/v1/projects/metal-dimension-646/i…
+[21:27:53.214][127.0.0.1:44324] client disconnect
+[21:27:53.216][127.0.0.1:44324] server disconnect 64.233.177.188:5228
+127.0.0.1:44340: POST https://172.217.118.4/v1/projects/metal-dimension-646/i…
               << 200 OK 494b
-[21:06:03.126][127.0.0.1:51240] client connect
-[21:06:03.133][127.0.0.1:51240] server connect 173.194.45.94:443
-[21:06:03.230][127.0.0.1:51210] client disconnect
-[21:06:03.230][127.0.0.1:51210] server disconnect 192.178.234.188:443
-[21:06:04.123][127.0.0.1:51254] client connect
-[21:06:04.131][127.0.0.1:51254] server connect 142.251.153.119:443
-[21:06:04.441] Addon error: 'utf-8' codec can't encode character '\udc85' in position 82: surrogates not allowed
+[21:27:53.315][127.0.0.1:44360] client connect
+[21:27:53.335][127.0.0.1:44360] server connect 172.217.117.4:443
+[21:27:53.784][127.0.0.1:44360] Client TLS handshake failed. The client does not trust the proxy's certificate for youtubei.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:53.785][127.0.0.1:44360] client disconnect
+[21:27:53.786][127.0.0.1:44360] server disconnect 172.217.117.4:443
+[21:27:54.136][127.0.0.1:44376] client connect
+[21:27:54.155][127.0.0.1:44376] server connect 172.217.119.4:443
+[21:27:54.381][127.0.0.1:44390] client connect
+[21:27:54.413][127.0.0.1:44390] server connect 142.251.184.94:443
+127.0.0.1:44376: POST https://172.217.119.4/v1/projects/zillatest-20296/insta…
+              << 200 OK 494b
+[21:27:55.554][127.0.0.1:44394] client connect
+[21:27:55.590][127.0.0.1:44394] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:27:55.602][127.0.0.1:44398] client connect
+[21:27:55.616][127.0.0.1:44398] server connect 142.251.154.119:443
+[21:27:55.620][127.0.0.1:44402] client connect
+[21:27:55.621][127.0.0.1:44406] client connect
+127.0.0.1:44394: GET http://connectivitycheck.gstatic.com/generate_204
+              << 204 No Content 0b
+[21:27:55.628][127.0.0.1:44394] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:27:55.631][127.0.0.1:44394] client disconnect
+[21:27:55.641][127.0.0.1:44402] server connect 142.251.150.119:443
+[21:27:55.643][127.0.0.1:44406] server connect 142.251.154.119:443
+[21:27:55.670] Addon error: 'utf-8' codec can't encode character '\udc85' in position 82: surrogates not allowed
 Traceback (most recent call last):
   File "scripts/dynamic/flow_logger.py", line 40, in response
     _log(f"<<< {status} {flow.request.pretty_url} ct={ct} len={len(body)} :: {preview}")
   File "scripts/dynamic/flow_logger.py", line 18, in _log
     f.write(text + "\n")
 UnicodeEncodeError: 'utf-8' codec can't encode character '\udc85' in position 82: surrogates not allowed
-127.0.0.1:51240: GET https://173.194.45.94/s/a/directory017.pb
+127.0.0.1:44390: GET https://142.251.184.94/s/a/directory017.pb
               << 200 OK 107k
-[21:06:04.447][127.0.0.1:51270] client connect
-[21:06:04.455][127.0.0.1:51270] server connect 64.233.180.97:443
-127.0.0.1:51254: GET https://142.251.153.119/async/ddljson?async=_fmt:pb&cli… HTTP/2.0
+[21:27:55.704][127.0.0.1:44402] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:55.705][127.0.0.1:44402] client disconnect
+[21:27:55.706][127.0.0.1:44402] server disconnect 142.251.150.119:443
+[21:27:55.715][127.0.0.1:44408] client connect
+[21:27:55.722][127.0.0.1:44416] client connect
+[21:27:55.723][127.0.0.1:44428] client connect
+[21:27:55.732][127.0.0.1:44432] client connect
+[21:27:55.738][127.0.0.1:44408] server connect 142.251.154.119:443
+[21:27:55.744][127.0.0.1:44428] server connect 142.251.154.119:443
+[21:27:55.745][127.0.0.1:44416] server connect 142.251.154.119:443
+[21:27:55.751][127.0.0.1:44432] server connect www.google.com:80 (142.251.150.119:80)
+127.0.0.1:44432: GET http://www.google.com/gen_204
+              << 204 No Content 0b
+[21:27:55.789][127.0.0.1:44432] server disconnect www.google.com:80 (142.251.150.119:80)
+[21:27:55.789][127.0.0.1:44432] client disconnect
+[21:27:55.798][127.0.0.1:44408] Client TLS handshake failed. The client disconnected during the handshake. If this happens consistently for www.google.com, this may indicate that the client does not trust the proxy's certificate.
+[21:27:55.798][127.0.0.1:44416] Client TLS handshake failed. The client disconnected during the handshake. If this happens consistently for www.google.com, this may indicate that the client does not trust the proxy's certificate.
+[21:27:55.799][127.0.0.1:44428] Client TLS handshake failed. The client disconnected during the handshake. If this happens consistently for www.google.com, this may indicate that the client does not trust the proxy's certificate.
+[21:27:55.805][127.0.0.1:44406] client disconnect
+[21:27:55.811][127.0.0.1:44448] client connect
+[21:27:55.811][127.0.0.1:44408] client disconnect
+[21:27:55.811][127.0.0.1:44416] client disconnect
+[21:27:55.811][127.0.0.1:44428] client disconnect
+[21:27:55.812][127.0.0.1:44406] server disconnect 142.251.154.119:443
+[21:27:55.813][127.0.0.1:44408] server disconnect 142.251.154.119:443
+[21:27:55.813][127.0.0.1:44416] server disconnect 142.251.154.119:443
+[21:27:55.814][127.0.0.1:44428] server disconnect 142.251.154.119:443
+[21:27:55.851][127.0.0.1:44448] server connect 209.85.200.97:443
+127.0.0.1:44398: GET https://142.251.154.119/async/ddljson?async=_fmt:pb&cli… HTTP/2.0
      << HTTP/2.0 200 OK 0b
-127.0.0.1:51270: GET https://64.233.180.97/r?id=GTM-K9CNX3&v=a65833898
-              << 200 OK 14.5k
-[21:06:05.015][127.0.0.1:51282] client connect
-[21:06:05.022][127.0.0.1:51282] server connect 172.217.117.4:443
-[21:06:05.531][127.0.0.1:51282] Client TLS handshake failed. The client does not trust the proxy's certificate for youtubei.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:05.534][127.0.0.1:51282] client disconnect
-[21:06:05.535][127.0.0.1:51282] server disconnect 172.217.117.4:443
-[21:06:06.718][127.0.0.1:51288] client connect
-[21:06:06.722][127.0.0.1:51298] client connect
-[21:06:06.726][127.0.0.1:51288] server connect 142.251.156.119:443
-[21:06:06.731][127.0.0.1:51298] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:51298: GET http://connectivitycheck.gstatic.com/generate_204
-              << 204 No Content 0b
-[21:06:06.741][127.0.0.1:51298] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:06:06.742][127.0.0.1:51288] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:06.743][127.0.0.1:51298] client disconnect
-[21:06:06.743][127.0.0.1:51288] client disconnect
-[21:06:06.744][127.0.0.1:51288] server disconnect 142.251.156.119:443
-[21:06:06.750][127.0.0.1:51306] client connect
-[21:06:06.758][127.0.0.1:51306] server connect www.google.com:80 (142.251.155.119:80)
-127.0.0.1:51306: GET http://www.google.com/gen_204
-              << 204 No Content 0b
-[21:06:06.775][127.0.0.1:51306] server disconnect www.google.com:80 (142.251.155.119:80)
-[21:06:06.776][127.0.0.1:51306] client disconnect
-[21:06:07.053][127.0.0.1:51308] client connect
-[21:06:07.055][127.0.0.1:51310] client connect
-[21:06:07.061][127.0.0.1:51308] server connect 172.217.112.4:443
-[21:06:07.063][127.0.0.1:51310] server connect 172.217.112.4:443
-[21:06:07.131][127.0.0.1:51322] client connect
-[21:06:07.141][127.0.0.1:51322] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:51322: GET http://connectivitycheck.gstatic.com/generate_204
-              << 204 No Content 0b
-[21:06:07.149][127.0.0.1:51322] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:06:07.150][127.0.0.1:51322] client disconnect
-[21:06:07.190][127.0.0.1:51338] client connect
-[21:06:07.192][127.0.0.1:51338] error establishing server connection: [Errno 101] Network is unreachable
-127.0.0.1:51338: CONNECT 2001:4860:4828:7700:::443
-              << 502 Bad Gateway 217b
-[21:06:07.194][127.0.0.1:51338] client disconnect
-[21:06:07.197][127.0.0.1:51344] client connect
-[21:06:07.202][127.0.0.1:51344] server connect 142.251.154.119:443
-[21:06:07.209][127.0.0.1:51346] client connect
-[21:06:07.217][127.0.0.1:51346] server connect 172.217.113.4:443
-[21:06:07.538][127.0.0.1:51344] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:07.539][127.0.0.1:51344] client disconnect
-[21:06:07.539][127.0.0.1:51344] server disconnect 142.251.154.119:443
-[21:06:07.589][127.0.0.1:51350] client connect
-[21:06:07.598][127.0.0.1:51350] server connect play.googleapis.com:80 (172.217.114.4:80)
-127.0.0.1:51350: GET http://play.googleapis.com/generate_204
-              << 204 No Content 0b
-[21:06:07.603][127.0.0.1:51350] server disconnect play.googleapis.com:80 (172.217.114.4:80)
-[21:06:07.604][127.0.0.1:51350] client disconnect
-127.0.0.1:51308: POST https://172.217.112.4/androidantiabuse/v1/x/create?alt=…
-              << 200 OK 302k
-127.0.0.1:51254: POST https://142.251.153.119/m/voice-search/down?pair=f9c0d5… HTTP/2.0
+127.0.0.1:44398: POST https://142.251.154.119/m/voice-search/down?pair=e6328e… HTTP/2.0
      << HTTP/2.0 200 OK 19b
-127.0.0.1:51254: POST https://142.251.153.119/m/voice-search/up?pair=f9c0d55f… HTTP/2.0
+127.0.0.1:44398: POST https://142.251.154.119/m/voice-search/up?pair=e6328e20… HTTP/2.0
      << HTTP/2.0 200 OK 0b
-127.0.0.1:51346: POST https://172.217.113.4/v1/projects/zillatest-20296/insta…
-              << 200 OK 492b
-127.0.0.1:51310: POST https://172.217.112.4/experimentsandconfigs/v1/getExper…
-              << 200 OK 173k
-127.0.0.1:51254: POST https://142.251.153.119/m/voice-search/down?pair=f203b3… HTTP/2.0
+127.0.0.1:44448: GET https://209.85.200.97/r?id=GTM-K9CNX3&v=a65833898
+              << 200 OK 14.5k
+[21:27:56.035][127.0.0.1:44452] client connect
+[21:27:56.050][127.0.0.1:44452] server connect 172.217.117.4:443
+[21:27:56.510][127.0.0.1:44452] Client TLS handshake failed. The client does not trust the proxy's certificate for youtubei.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:56.510][127.0.0.1:44452] client disconnect
+[21:27:56.511][127.0.0.1:44452] server disconnect 172.217.117.4:443
+127.0.0.1:44398: POST https://142.251.154.119/m/voice-search/down?pair=9bddc2… HTTP/2.0
      << HTTP/2.0 200 OK 87b
-127.0.0.1:51254: POST https://142.251.153.119/m/voice-search/up?pair=f203b304… HTTP/2.0
+127.0.0.1:44398: POST https://142.251.154.119/m/voice-search/up?pair=9bddc2de… HTTP/2.0
      << HTTP/2.0 200 OK 0b
-[21:06:08.297][127.0.0.1:51950] client connect
-[21:06:08.303][127.0.0.1:51950] server connect 173.194.45.188:5228
-[21:06:08.640][127.0.0.1:51966] client connect
-[21:06:08.646][127.0.0.1:51966] server connect 64.233.180.148:443
-[21:06:08.868][127.0.0.1:51950] client disconnect
-[21:06:08.869][127.0.0.1:51950] server disconnect 173.194.45.188:5228
-127.0.0.1:51966: GET https://64.233.180.148/ddm/activity/src=2542116;type=yt…
-              << 302 Found 0b
-[21:06:08.987][127.0.0.1:51976] client connect
-[21:06:08.993][127.0.0.1:51976] server connect 173.194.45.188:5228
-[21:06:09.182][127.0.0.1:51976] client disconnect
-[21:06:09.183][127.0.0.1:51976] server disconnect 173.194.45.188:5228
-[21:06:10.213][127.0.0.1:51980] client connect
-[21:06:10.218][127.0.0.1:51980] server connect 172.217.112.4:443
-[21:06:10.308][127.0.0.1:51988] client connect
-[21:06:10.313][127.0.0.1:51988] server connect 172.217.113.4:443
-127.0.0.1:51988: POST https://172.217.113.4/v1/projects/google.com:cakemix/in…
-              << 200 OK 493b
-127.0.0.1:51980: POST https://172.217.112.4/androidcheck/v1/attestations/adAt…
-              << 200 OK 219b
-127.0.0.1:51240: GET https://173.194.45.94/s/a/975e5d89d39fa5ce6e443f0acba2d…
-              << 200 OK 9.1m
-[21:06:11.908][127.0.0.1:51992] client connect
-[21:06:11.913][127.0.0.1:51992] server connect 142.251.150.119:443
-127.0.0.1:51992: POST https://142.251.150.119/loc/m/api
-              << 200 OK 189b
-[21:06:12.285][127.0.0.1:52004] client connect
-[21:06:12.291][127.0.0.1:52004] server connect 172.217.117.4:443
-[21:06:12.358][127.0.0.1:52004] Client TLS handshake failed. The client does not trust the proxy's certificate for youtubei.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:12.361][127.0.0.1:52004] client disconnect
-[21:06:12.361][127.0.0.1:52004] server disconnect 172.217.117.4:443
-127.0.0.1:51980: POST https://172.217.112.4/androidcheck/v1/attestations/adAt…
-              << 200 OK 218b
-[21:06:14.473][127.0.0.1:52008] client connect
-[21:06:14.478][127.0.0.1:52008] server connect 142.250.31.156:443
-127.0.0.1:51308: POST https://172.217.112.4/androidantiabuse/v1/x/create?alt=…
-              << 200 OK 66.7k
-127.0.0.1:52008: GET https://142.250.31.156/ddm/fls/z/src=2542116;type=ytmus…
-              << 200 OK 42b
-127.0.0.1:51308: POST https://172.217.112.4/androidantiabuse/v1/x/create?alt=…
-              << 200 OK 67.3k
-[21:06:15.771][127.0.0.1:52010] client connect
-[21:06:15.777][127.0.0.1:52010] server connect 142.251.150.119:443
-[21:06:15.815][127.0.0.1:52026] client connect
-[21:06:15.827][127.0.0.1:52026] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:52026: GET http://connectivitycheck.gstatic.com/generate_204
+[21:27:57.316][127.0.0.1:44458] client connect
+[21:27:57.354][127.0.0.1:44458] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+127.0.0.1:44458: GET http://connectivitycheck.gstatic.com/generate_204
               << 204 No Content 0b
-[21:06:15.832][127.0.0.1:52026] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:06:15.833][127.0.0.1:52026] client disconnect
-[21:06:15.843][127.0.0.1:52010] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:15.844][127.0.0.1:52010] client disconnect
-[21:06:15.846][127.0.0.1:52010] server disconnect 142.251.150.119:443
-[21:06:15.854][127.0.0.1:52028] client connect
-[21:06:15.861][127.0.0.1:52028] server connect www.google.com:80 (142.251.155.119:80)
-127.0.0.1:52028: GET http://www.google.com/gen_204
+[21:27:57.388][127.0.0.1:44458] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:27:57.388][127.0.0.1:44458] client disconnect
+[21:27:57.440][127.0.0.1:44470] client connect
+[21:27:57.460][127.0.0.1:44470] server connect 142.251.152.119:443
+[21:27:57.630][127.0.0.1:44470] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:27:57.632][127.0.0.1:44470] client disconnect
+[21:27:57.633][127.0.0.1:44470] server disconnect 142.251.152.119:443
+[21:27:57.736][127.0.0.1:44472] client connect
+[21:27:57.762][127.0.0.1:44472] server connect 74.125.202.188:5228
+[21:27:57.829][127.0.0.1:44482] client connect
+[21:27:57.847][127.0.0.1:44482] server connect 172.217.119.4:443
+[21:27:58.148][127.0.0.1:57820] client connect
+[21:27:58.149][127.0.0.1:57822] client connect
+[21:27:58.150][127.0.0.1:57832] client connect
+[21:27:58.167][127.0.0.1:57832] server connect 172.217.116.4:443
+[21:27:58.168][127.0.0.1:57820] server connect play.googleapis.com:80 (172.217.114.4:80)
+[21:27:58.170][127.0.0.1:57822] server connect 172.217.116.4:443
+127.0.0.1:57820: GET http://play.googleapis.com/generate_204
               << 204 No Content 0b
-[21:06:15.871][127.0.0.1:52028] server disconnect www.google.com:80 (142.251.155.119:80)
-[21:06:15.871][127.0.0.1:52028] client disconnect
-[21:06:16.097][127.0.0.1:52008] client disconnect
-[21:06:16.097][127.0.0.1:52008] server disconnect 142.250.31.156:443
-[21:06:16.099][127.0.0.1:51966] client disconnect
-[21:06:16.099][127.0.0.1:51236] client disconnect
-[21:06:16.099][127.0.0.1:51270] client disconnect
-[21:06:16.100][127.0.0.1:51966] server disconnect 64.233.180.148:443
-[21:06:16.100][127.0.0.1:51236] server disconnect 172.217.113.4:443
-[21:06:16.101][127.0.0.1:51270] server disconnect 64.233.180.97:443
-127.0.0.1:51308: POST https://172.217.112.4/androidantiabuse/v1/x/create?alt=…
-              << 200 OK 76.0k
-[21:06:16.552][127.0.0.1:51196] client disconnect
-[21:06:16.553][127.0.0.1:51196] server disconnect 142.251.151.4:443
-[21:06:16.555][127.0.0.1:52034] client connect
-[21:06:16.562][127.0.0.1:52034] server connect 172.217.112.4:443
-127.0.0.1:52034: POST https://172.217.112.4/google.internal.communications.in… HTTP/2.0
-     << HTTP/2.0 200 OK 0b
-[21:06:17.069][127.0.0.1:52046] client connect
-[21:06:17.076][127.0.0.1:52046] server connect 172.217.117.4:443
-127.0.0.1:52046: POST https://172.217.117.4/checkin
-              << 200 OK 39.9k
-127.0.0.1:51980: POST https://172.217.112.4/androidcheck/v1/attestations/adAt…
-              << 200 OK 218b
-[21:06:18.155][127.0.0.1:40884] client connect
-[21:06:18.160][127.0.0.1:40884] server connect 172.217.112.4:443
-127.0.0.1:51308: POST https://172.217.112.4/androidantiabuse/v1/x/create?alt=…
-              << 200 OK 59.3k
-127.0.0.1:40884: POST https://172.217.112.4/androidantiabuse/v1/x/create?alt=…
-              << 200 OK 61.3k
-[21:06:18.570][127.0.0.1:40892] client connect
-[21:06:18.574][127.0.0.1:40898] client connect
-[21:06:18.581][127.0.0.1:40892] server connect 172.253.62.100:443
-[21:06:18.583][127.0.0.1:40898] server connect 172.217.112.4:443
-127.0.0.1:40898: POST https://172.217.112.4/experimentsandconfigs/v1/getExper…
-              << 200 OK 281k
-127.0.0.1:40892: GET https://172.253.62.100/config/app/1%3A357317899610%3Aan…
-              << 200 OK 1.3k
-127.0.0.1:51980: POST https://172.217.112.4/androidcheck/v1/attestations/adAt…
-              << 200 OK 218b
-127.0.0.1:40892: POST https://172.253.62.100/a
-              << 204 No Content 0b
-127.0.0.1:51980: POST https://172.217.112.4/androidcheck/v1/attestations/adAt…
-              << 200 OK 216b
-[21:06:20.630][127.0.0.1:40910] client connect
-[21:06:20.636][127.0.0.1:40910] server connect 172.217.117.4:443
-[21:06:20.947][127.0.0.1:40916] client connect
-[21:06:20.952][127.0.0.1:40916] server connect 192.178.218.94:443
-[21:06:21.083][127.0.0.1:40926] client connect
-[21:06:21.088][127.0.0.1:40926] server connect 172.217.113.4:443
-127.0.0.1:51980: POST https://172.217.112.4/androidcheck/v1/attestations/adAt…
-              << 200 OK 215b
-127.0.0.1:40916: GET https://192.178.218.94/android/keyboard/modelpack/emoji… HTTP/2.0
-     << HTTP/2.0 200 OK 4.7k
-127.0.0.1:40916: GET https://192.178.218.94/android/keyboard/dictionarypack/… HTTP/2.0
-     << HTTP/2.0 200 OK 74.6k
-127.0.0.1:40910: POST https://172.217.117.4/checkin
-              << 200 OK 39.9k
-127.0.0.1:40926: POST https://172.217.113.4/v1/projects/tactile-1035/installa…
-              << 200 OK 493b
-[21:06:21.806][127.0.0.1:40940] client connect
-[21:06:21.811][127.0.0.1:40940] server connect 142.251.163.91:443
-127.0.0.1:51980: POST https://172.217.112.4/androidcheck/v1/attestations/adAt…
-              << 200 OK 215b
-[21:06:21.904][127.0.0.1:40956] client connect
-[21:06:21.909][127.0.0.1:40956] server connect 172.253.122.102:443
-127.0.0.1:40940: GET https://142.251.163.91/android/voice/gboard/terse/super… HTTP/2.0
-     << HTTP/2.0 200 OK 1.1k
-[21:06:21.986][127.0.0.1:40964] client connect
-[21:06:21.991][127.0.0.1:40964] server connect 192.178.218.94:443
-127.0.0.1:40956: POST https://172.253.122.102/c2dm/register3
-              << 200 OK 159b
-127.0.0.1:40964: GET https://192.178.218.94/android/keyboard/dictionarypack/… HTTP/2.0
-     << HTTP/2.0 200 OK 5.0m
-[21:06:22.862][127.0.0.1:40970] client connect
-[21:06:22.871][127.0.0.1:40970] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:40970: GET http://connectivitycheck.gstatic.com/generate_204
-              << 204 No Content 0b
-[21:06:22.877][127.0.0.1:40970] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:06:22.878][127.0.0.1:40970] client disconnect
-[21:06:22.923][127.0.0.1:40986] client connect
-[21:06:22.932][127.0.0.1:40986] server connect 142.251.152.119:443
-[21:06:22.953][127.0.0.1:40986] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:22.955][127.0.0.1:40986] client disconnect
-[21:06:22.955][127.0.0.1:40986] server disconnect 142.251.152.119:443
-[21:06:22.974][127.0.0.1:40992] client connect
-[21:06:22.982][127.0.0.1:40992] server connect play.googleapis.com:80 (172.217.115.4:80)
-127.0.0.1:40992: GET http://play.googleapis.com/generate_204
-              << 204 No Content 0b
-[21:06:22.986][127.0.0.1:40992] server disconnect play.googleapis.com:80 (172.217.115.4:80)
-[21:06:22.987][127.0.0.1:40992] client disconnect
-127.0.0.1:51980: POST https://172.217.112.4/androidcheck/v1/attestations/adAt…
-              << 200 OK 216b
-127.0.0.1:40956: POST https://172.253.122.102/c2dm/register3
-              << 200 OK 159b
-[21:06:26.311][127.0.0.1:40998] client connect
-[21:06:26.316][127.0.0.1:40998] server connect 172.217.117.4:443
-127.0.0.1:40998: POST https://172.217.117.4/deviceregistration/v1/devices?key… HTTP/2.0
-     << HTTP/2.0 200 OK 226b
-127.0.0.1:40998: POST https://172.217.117.4/youtubei/v1/visitor_id?key=AIzaSy… HTTP/2.0
-     << HTTP/2.0 200 OK 657b
-127.0.0.1:40998: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
-     << HTTP/2.0 400 Bad Request 50b
-[21:06:27.308][127.0.0.1:41002] client connect
-[21:06:27.313][127.0.0.1:41002] server connect 142.251.111.154:443
-[21:06:27.480][127.0.0.1:51988] client disconnect
-[21:06:27.481][127.0.0.1:51988] server disconnect 172.217.113.4:443
-127.0.0.1:41002: GET https://142.251.111.154/pagead/conversion/964916429/?bu…
-              << 200 OK 0b
-[21:06:27.592][127.0.0.1:40926] client disconnect
-[21:06:27.593][127.0.0.1:40926] server disconnect 172.217.113.4:443
-[21:06:27.598][127.0.0.1:41014] client connect
-[21:06:27.602][127.0.0.1:41014] server connect 64.233.180.148:443
-127.0.0.1:41014: GET https://64.233.180.148/ddm/activity/src=2542116;type=yt…
-              << 302 Found 0b
-127.0.0.1:51308: POST https://172.217.112.4/androidantiabuse/v1/x/create?alt=…
-              << 200 OK 77.4k
-[21:06:28.166][127.0.0.1:55148] client connect
-[21:06:28.171][127.0.0.1:55148] server connect 142.250.31.156:443
-[21:06:28.335][127.0.0.1:55158] client connect
-[21:06:28.340][127.0.0.1:55158] server connect 172.217.113.4:443
-[21:06:28.412][127.0.0.1:55170] client connect
-[21:06:28.418][127.0.0.1:55170] server connect 172.217.112.4:443
-127.0.0.1:40998: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
-     << HTTP/2.0 400 Bad Request 50b
-127.0.0.1:55148: GET https://142.250.31.156/ddm/fls/z/src=2542116;type=ytmus…
-              << 200 OK 42b
-127.0.0.1:41002: GET https://142.251.111.154/pagead/conversion/964916429/?bu…
-              << 200 OK 0b
-127.0.0.1:41002: GET https://142.251.111.154/pagead/conversion/964916429/?bu…
-              << 200 OK 0b
-127.0.0.1:41014: GET https://64.233.180.148/ddm/activity/src=2542116;type=yt…
-              << 302 Found 0b
-127.0.0.1:55158: POST https://172.217.113.4/v1/projects/google.com:api-projec…
-              << 200 OK 495b
-[21:06:28.717][127.0.0.1:55178] client connect
-[21:06:28.723][127.0.0.1:55178] server connect 142.251.150.119:443
-127.0.0.1:55170: GET https://172.217.112.4/android_video/v1/config?make=Goog…
-              << 200 OK 1.2k
-127.0.0.1:55178: GET https://142.251.150.119/gmp/conversion/_dc_unique_id=11…
-              << 200 OK 42b
-127.0.0.1:41014: GET https://64.233.180.148/ddm/activity/src=2542116;type=yt…
-              << 302 Found 0b
-127.0.0.1:55148: GET https://142.250.31.156/ddm/fls/z/src=2542116;type=ytmus…
-              << 200 OK 42b
-127.0.0.1:40956: POST https://172.253.122.102/c2dm/register3
-              << 200 OK 160b
-127.0.0.1:40956: POST https://172.253.122.102/c2dm/register3
-              << 301 Moved Permanently 45b
-127.0.0.1:40892: GET https://172.253.62.100/config/app/1%3A493454522602%3Aan…
-              << 200 OK 1.0k
-[21:06:30.124][127.0.0.1:55194] client connect
-[21:06:30.129][127.0.0.1:55194] server connect 172.217.113.4:443
-127.0.0.1:55194: POST https://172.217.113.4/v1/projects/google.com:youtube-an…
+[21:27:58.183][127.0.0.1:57820] server disconnect play.googleapis.com:80 (172.217.114.4:80)
+[21:27:58.183][127.0.0.1:57820] client disconnect
+[21:27:58.246][127.0.0.1:44472] client disconnect
+[21:27:58.248][127.0.0.1:44472] server disconnect 74.125.202.188:5228
+[21:27:58.263][127.0.0.1:57840] client connect
+[21:27:58.286][127.0.0.1:57840] server connect 74.125.202.188:5228
+127.0.0.1:44482: POST https://172.217.119.4/v1/projects/google.com:cakemix/in…
               << 200 OK 494b
-[21:06:31.008][127.0.0.1:55200] client connect
-[21:06:31.014][127.0.0.1:55202] client connect
-[21:06:31.018][127.0.0.1:55200] server connect 172.217.117.4:443
-[21:06:31.024][127.0.0.1:55202] server connect 172.217.117.4:443
-[21:06:31.263][127.0.0.1:55206] client connect
-[21:06:31.268][127.0.0.1:55206] server connect 142.251.111.154:443
-[21:06:31.384][127.0.0.1:55218] client connect
-[21:06:31.385][127.0.0.1:55202] client disconnect
-[21:06:31.386][127.0.0.1:55202] server disconnect 172.217.117.4:443
-127.0.0.1:55200: HEAD https://172.217.117.4/generate_204 HTTP/2.0
-     << HTTP/2.0 204 No Content 0b
-[21:06:31.401][127.0.0.1:55218] server connect 142.251.151.4:443
-127.0.0.1:55206: GET https://142.251.111.154/pagead/conversion/1001680686/?b…
+127.0.0.1:57822: POST https://172.217.116.4/androidantiabuse/v1/x/create?alt=…
+              << 200 OK 302k
+127.0.0.1:57832: POST https://172.217.116.4/experimentsandconfigs/v1/getExper…
+              << 200 OK 197k
+[21:27:58.611][127.0.0.1:57840] client disconnect
+[21:27:58.612][127.0.0.1:57840] server disconnect 74.125.202.188:5228
+[21:27:59.040][127.0.0.1:57850] client connect
+[21:27:59.088][127.0.0.1:57850] server connect 192.178.209.156:443
+127.0.0.1:57850: GET https://192.178.209.156/pagead/conversion/964916429/?bu…
               << 200 OK 0b
-127.0.0.1:55218: GET https://142.251.151.4/csi_204?v=3&s=youtube_android&act… HTTP/2.0
-     << HTTP/2.0 204 No Content 0b
-127.0.0.1:55200: POST https://172.217.117.4/deviceregistration/v1/devices?key… HTTP/2.0
-     << HTTP/2.0 200 OK 228b
-127.0.0.1:40956: POST https://172.253.122.102/c2dm/register3
+[21:28:00.120][127.0.0.1:57856] client connect
+[21:28:00.140][127.0.0.1:57856] server connect 172.217.116.4:443
+[21:28:00.537][127.0.0.1:57866] client connect
+[21:28:00.585][127.0.0.1:57866] server connect 74.125.132.149:443
+127.0.0.1:57856: POST https://172.217.116.4/androidcheck/v1/attestations/adAt…
+              << 200 OK 218b
+127.0.0.1:57866: GET https://74.125.132.149/ddm/activity/src=2542116;type=yt…
+              << 302 Found 0b
+[21:28:00.774][127.0.0.1:57868] client connect
+[21:28:00.790][127.0.0.1:57868] server connect 172.217.117.4:443
+[21:28:01.200][127.0.0.1:57868] Client TLS handshake failed. The client does not trust the proxy's certificate for youtubei.googleapis.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:28:01.201][127.0.0.1:57868] client disconnect
+[21:28:01.202][127.0.0.1:57868] server disconnect 172.217.117.4:443
+[21:28:01.205][127.0.0.1:57876] client connect
+[21:28:01.259][127.0.0.1:57876] server connect 142.250.125.156:443
+127.0.0.1:44390: GET https://142.251.184.94/s/a/975e5d89d39fa5ce6e443f0acba2…
+              << 200 OK 9.1m
+127.0.0.1:57876: GET https://142.250.125.156/ddm/fls/z/src=2542116;type=ytmu…
+              << 200 OK 42b
+[21:28:01.856][127.0.0.1:57876] client disconnect
+[21:28:01.858][127.0.0.1:57876] server disconnect 142.250.125.156:443
+[21:28:01.861][127.0.0.1:57866] client disconnect
+[21:28:01.861][127.0.0.1:57850] client disconnect
+[21:28:01.861][127.0.0.1:44448] client disconnect
+[21:28:01.862][127.0.0.1:44340] client disconnect
+[21:28:01.862][127.0.0.1:57866] server disconnect 74.125.132.149:443
+[21:28:01.863][127.0.0.1:57850] server disconnect 192.178.209.156:443
+[21:28:01.863][127.0.0.1:44448] server disconnect 209.85.200.97:443
+[21:28:01.864][127.0.0.1:44340] server disconnect 172.217.118.4:443
+127.0.0.1:57822: POST https://172.217.116.4/androidantiabuse/v1/x/create?alt=…
+              << 200 OK 67.5k
+[21:28:02.899][127.0.0.1:57880] client connect
+[21:28:02.913][127.0.0.1:57880] server connect 172.217.116.4:443
+127.0.0.1:57880: POST https://172.217.116.4/experimentsandconfigs/v1/getExper…
+              << 200 OK 256k
+127.0.0.1:57822: POST https://172.217.116.4/androidantiabuse/v1/x/create?alt=…
+              << 200 OK 66.6k
+127.0.0.1:57822: POST https://172.217.116.4/androidantiabuse/v1/x/create?alt=…
+              << 200 OK 75.9k
+127.0.0.1:57856: POST https://172.217.116.4/androidcheck/v1/attestations/adAt…
+              << 200 OK 218b
+[21:28:03.736][127.0.0.1:57894] client connect
+[21:28:03.748][127.0.0.1:57894] server connect 172.217.112.4:443
+127.0.0.1:57894: POST https://172.217.112.4/google.internal.communications.in… HTTP/2.0
+     << HTTP/2.0 200 OK 0b
+[21:28:04.633][127.0.0.1:57896] client connect
+[21:28:04.650][127.0.0.1:57896] server connect 172.217.118.4:443
+127.0.0.1:57822: POST https://172.217.116.4/androidantiabuse/v1/x/create?alt=…
+              << 200 OK 59.4k
+[21:28:05.421][127.0.0.1:44346] client disconnect
+[21:28:05.423][127.0.0.1:44346] server disconnect 142.251.155.4:443
+[21:28:05.423][127.0.0.1:44320] client disconnect
+[21:28:05.424][127.0.0.1:44320] server disconnect 192.178.209.156:443
+127.0.0.1:57896: POST https://172.217.118.4/checkin
+              << 200 OK 39.9k
+127.0.0.1:57856: POST https://172.217.116.4/androidcheck/v1/attestations/adAt…
+              << 200 OK 218b
+[21:28:06.326][127.0.0.1:57902] client connect
+[21:28:06.367][127.0.0.1:57906] client connect
+[21:28:06.370][127.0.0.1:57902] server connect 142.250.152.94:443
+[21:28:06.386][127.0.0.1:57916] client connect
+[21:28:06.400][127.0.0.1:57916] server connect 142.251.150.119:443
+[21:28:06.417][127.0.0.1:57906] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+127.0.0.1:57906: GET http://connectivitycheck.gstatic.com/generate_204
+              << 204 No Content 0b
+[21:28:06.456][127.0.0.1:57906] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:28:06.457][127.0.0.1:57906] client disconnect
+[21:28:06.544][127.0.0.1:57916] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:28:06.545][127.0.0.1:57916] client disconnect
+[21:28:06.546][127.0.0.1:57916] server disconnect 142.251.150.119:443
+[21:28:06.566][127.0.0.1:57928] client connect
+[21:28:06.584][127.0.0.1:57928] server connect play.googleapis.com:80 (172.217.118.4:80)
+127.0.0.1:57928: GET http://play.googleapis.com/generate_204
+              << 204 No Content 0b
+[21:28:06.603][127.0.0.1:57928] server disconnect play.googleapis.com:80 (172.217.118.4:80)
+[21:28:06.604][127.0.0.1:57928] client disconnect
+127.0.0.1:57902: GET https://142.250.152.94/android/keyboard/modelpack/emoji… HTTP/2.0
+     << HTTP/2.0 200 OK 4.7k
+[21:28:06.715][127.0.0.1:57942] client connect
+[21:28:06.739][127.0.0.1:57942] server connect 173.194.195.136:443
+127.0.0.1:57942: GET https://173.194.195.136/android/voice/gboard/terse/supe… HTTP/2.0
+     << HTTP/2.0 200 OK 1.1k
+127.0.0.1:57902: GET https://142.250.152.94/android/keyboard/dictionarypack/… HTTP/2.0
+     << HTTP/2.0 200 OK 74.6k
+[21:28:07.076][127.0.0.1:57950] client connect
+[21:28:07.103][127.0.0.1:57950] server connect 173.194.64.113:443
+127.0.0.1:57950: GET https://173.194.64.113/config/app/1%3A357317899610%3Aan…
+              << 200 OK 1.3k
+[21:28:07.671][127.0.0.1:57956] client connect
+127.0.0.1:57856: POST https://172.217.116.4/androidcheck/v1/attestations/adAt…
+              << 200 OK 218b
+127.0.0.1:57950: POST https://173.194.64.113/a
+              << 204 No Content 0b
+[21:28:07.699][127.0.0.1:57956] server connect 142.250.152.94:443
+127.0.0.1:57956: GET https://142.250.152.94/android/keyboard/dictionarypack/… HTTP/2.0
+     << HTTP/2.0 200 OK 5.0m
+[21:28:09.377][127.0.0.1:54958] client connect
+[21:28:09.392][127.0.0.1:54958] server connect 172.217.116.4:443
+[21:28:09.504][127.0.0.1:54964] client connect
+[21:28:09.518][127.0.0.1:54964] server connect 172.217.119.4:443
+127.0.0.1:54964: POST https://172.217.119.4/v1/projects/tactile-1035/installa…
+              << 200 OK 493b
+127.0.0.1:57822: POST https://172.217.116.4/androidantiabuse/v1/x/create?alt=…
+              << 200 OK 61.2k
+127.0.0.1:54958: POST https://172.217.116.4/experimentsandconfigs/v1/getExper…
+              << 200 OK 360k
+[21:28:09.980][127.0.0.1:54966] client connect
+[21:28:09.995][127.0.0.1:54966] server connect 172.217.118.4:443
+[21:28:10.474][127.0.0.1:54972] client connect
+127.0.0.1:57856: POST https://172.217.116.4/androidcheck/v1/attestations/adAt…
+              << 200 OK 216b
+[21:28:10.508][127.0.0.1:54972] server connect 64.233.181.101:443
+127.0.0.1:54966: POST https://172.217.118.4/checkin
+              << 200 OK 39.9k
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
               << 200 OK 161b
-[21:06:31.742][127.0.0.1:55178] client disconnect
-[21:06:31.743][127.0.0.1:55178] server disconnect 142.251.150.119:443
-[21:06:31.746][127.0.0.1:55148] client disconnect
-[21:06:31.748][127.0.0.1:55148] server disconnect 142.250.31.156:443
-[21:06:31.751][127.0.0.1:41014] client disconnect
-[21:06:31.752][127.0.0.1:41002] client disconnect
-[21:06:31.752][127.0.0.1:40998] client disconnect
-[21:06:31.753][127.0.0.1:41014] server disconnect 64.233.180.148:443
-[21:06:31.754][127.0.0.1:41002] server disconnect 142.251.111.154:443
-[21:06:31.755][127.0.0.1:40998] server disconnect 172.217.117.4:443
-[21:06:32.037][127.0.0.1:55230] client connect
-[21:06:32.047][127.0.0.1:55230] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:51308: POST https://172.217.112.4/androidantiabuse/v1/x/create?alt=…
-              << 200 OK 59.3k
-127.0.0.1:55230: GET http://connectivitycheck.gstatic.com/generate_204
-              << 204 No Content 0b
-[21:06:32.066][127.0.0.1:55230] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:06:32.067][127.0.0.1:55230] client disconnect
-[21:06:32.073][127.0.0.1:55234] client connect
-[21:06:32.078][127.0.0.1:55234] server connect 142.251.153.119:443
-[21:06:32.171][127.0.0.1:55242] client connect
-[21:06:32.176][127.0.0.1:55242] server connect 172.217.117.4:443
-127.0.0.1:40892: POST https://172.253.62.100/a
-              << 204 No Content 0b
-[21:06:32.254][127.0.0.1:55234] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:32.255][127.0.0.1:55244] client connect
-[21:06:32.256][127.0.0.1:55234] client disconnect
-[21:06:32.257][127.0.0.1:55234] server disconnect 142.251.153.119:443
-[21:06:32.266][127.0.0.1:55244] server connect www.google.com:80 (142.251.156.119:80)
-127.0.0.1:55244: GET http://www.google.com/gen_204
-              << 204 No Content 0b
-[21:06:32.289][127.0.0.1:55244] server disconnect www.google.com:80 (142.251.156.119:80)
-[21:06:32.290][127.0.0.1:55244] client disconnect
-127.0.0.1:55242: POST https://172.217.117.4/checkin
-              << 200 OK 468b
-[21:06:32.531][127.0.0.1:52046] client disconnect
-[21:06:32.532][127.0.0.1:52046] server disconnect 172.217.117.4:443
-127.0.0.1:51254: POST https://142.251.153.119/m/voice-search/down?pair=86f495… HTTP/2.0
-     << HTTP/2.0 200 OK 87b
-127.0.0.1:51254: POST https://142.251.153.119/m/voice-search/up?pair=86f49521… HTTP/2.0
-     << HTTP/2.0 200 OK 0b
-[21:06:33.947][127.0.0.1:55256] client connect
-[21:06:33.952][127.0.0.1:55256] server connect 173.194.45.188:5228
-127.0.0.1:55256 -> tcp -> 173.194.45.188:5228
-127.0.0.1:55256 <- tcp <- 173.194.45.188:5228
-127.0.0.1:55256 <- tcp <- 173.194.45.188:5228
-127.0.0.1:55256 <- tcp <- 173.194.45.188:5228
-[21:06:34.343][127.0.0.1:55266] client connect
-[21:06:34.348][127.0.0.1:55266] server connect 142.251.154.119:443
-[21:06:34.363][127.0.0.1:55276] client connect
-[21:06:34.370][127.0.0.1:55276] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:55276: GET http://connectivitycheck.gstatic.com/generate_204
-              << 204 No Content 0b
-[21:06:34.375][127.0.0.1:55276] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:06:34.376][127.0.0.1:55276] client disconnect
-[21:06:34.741][127.0.0.1:55266] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:34.741][127.0.0.1:55266] client disconnect
-[21:06:34.742][127.0.0.1:55266] server disconnect 142.251.154.119:443
-[21:06:34.754][127.0.0.1:55288] client connect
-[21:06:34.762][127.0.0.1:55288] server connect www.google.com:80 (142.251.156.119:80)
-127.0.0.1:55288: GET http://www.google.com/gen_204
-              << 204 No Content 0b
-[21:06:34.780][127.0.0.1:55288] server disconnect www.google.com:80 (142.251.156.119:80)
-[21:06:34.780][127.0.0.1:55288] client disconnect
-127.0.0.1:55200: POST https://172.217.117.4/youtubei/v1/visitor_id?key=AIzaSy… HTTP/2.0
-     << HTTP/2.0 200 OK 652b
-127.0.0.1:55200: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
-     << HTTP/2.0 400 Bad Request 50b
-[21:06:36.469][127.0.0.1:55294] client connect
-[21:06:36.476][127.0.0.1:55294] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:55294: GET http://connectivitycheck.gstatic.com/generate_204
-              << 204 No Content 0b
-[21:06:36.482][127.0.0.1:55294] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:06:36.483][127.0.0.1:55294] client disconnect
-[21:06:36.485][127.0.0.1:55308] client connect
-[21:06:36.487][127.0.0.1:55308] error establishing server connection: [Errno 101] Network is unreachable
-127.0.0.1:55308: CONNECT 2001:4860:482d:7700:::443
-              << 502 Bad Gateway 217b
-[21:06:36.488][127.0.0.1:55308] client disconnect
-[21:06:36.490][127.0.0.1:55320] client connect
-[21:06:36.496][127.0.0.1:55320] server connect 142.251.153.119:443
-[21:06:36.861][127.0.0.1:55320] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:36.865][127.0.0.1:55320] client disconnect
-[21:06:36.865][127.0.0.1:55320] server disconnect 142.251.153.119:443
-[21:06:36.866][127.0.0.1:55336] client connect
-[21:06:36.881][127.0.0.1:55336] server connect www.google.com:80 (142.251.156.119:80)
-127.0.0.1:55336: GET http://www.google.com/gen_204
-              << 204 No Content 0b
-[21:06:36.905][127.0.0.1:55336] server disconnect www.google.com:80 (142.251.156.119:80)
-[21:06:36.906][127.0.0.1:55336] client disconnect
-127.0.0.1:55200: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
-     << HTTP/2.0 400 Bad Request 50b
-127.0.0.1:40956: POST https://172.253.122.102/c2dm/register3
-              << 301 Moved Permanently 45b
-[21:06:39.770][127.0.0.1:54484] client connect
-[21:06:39.784][127.0.0.1:54484] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:54484: GET http://connectivitycheck.gstatic.com/generate_204
-              << 204 No Content 0b
-[21:06:39.789][127.0.0.1:54484] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:06:39.795][127.0.0.1:54484] client disconnect
-[21:06:39.809][127.0.0.1:54498] client connect
-[21:06:39.820][127.0.0.1:54498] error establishing server connection: [Errno 101] Network is unreachable
-127.0.0.1:54498: CONNECT 2001:4860:4827:7700:::443
-              << 502 Bad Gateway 217b
-[21:06:39.822][127.0.0.1:54498] client disconnect
-[21:06:39.828][127.0.0.1:54500] client connect
-[21:06:39.833][127.0.0.1:54500] server connect 142.251.157.119:443
-127.0.0.1:55200: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
-     << HTTP/2.0 400 Bad Request 50b
-[21:06:40.202][127.0.0.1:54500] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:40.206][127.0.0.1:54500] client disconnect
-[21:06:40.207][127.0.0.1:54500] server disconnect 142.251.157.119:443
-[21:06:40.209][127.0.0.1:54502] client connect
-[21:06:40.221][127.0.0.1:54502] server connect www.google.com:80 (142.251.156.119:80)
-127.0.0.1:54502: GET http://www.google.com/gen_204
-              << 204 No Content 0b
-[21:06:40.241][127.0.0.1:54502] server disconnect www.google.com:80 (142.251.156.119:80)
-[21:06:40.250][127.0.0.1:54502] client disconnect
-127.0.0.1:51254: POST https://142.251.153.119/m/voice-search/down?pair=7e504d… HTTP/2.0
-     << HTTP/2.0 200 OK 87b
-127.0.0.1:51254: POST https://142.251.153.119/m/voice-search/up?pair=7e504d8e… HTTP/2.0
-     << HTTP/2.0 200 OK 0b
-127.0.0.1:40956: POST https://172.253.122.102/c2dm/register3
-              << 301 Moved Permanently 45b
-127.0.0.1:40956: POST https://172.253.122.102/c2dm/register3
-              << 301 Moved Permanently 45b
-[21:06:44.944][127.0.0.1:54504] client connect
-[21:06:44.949][127.0.0.1:54518] client connect
-[21:06:44.952][127.0.0.1:54504] server connect 142.251.151.119:443
-[21:06:44.992][127.0.0.1:54518] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:54518: GET http://connectivitycheck.gstatic.com/generate_204
-              << 204 No Content 0b
-[21:06:45.004][127.0.0.1:54518] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:06:45.005][127.0.0.1:54518] client disconnect
-[21:06:45.169][127.0.0.1:54504] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:45.170][127.0.0.1:54504] client disconnect
-[21:06:45.170][127.0.0.1:54504] server disconnect 142.251.151.119:443
-[21:06:45.245][127.0.0.1:54522] client connect
-[21:06:45.274][127.0.0.1:54522] server connect www.google.com:80 (142.251.155.119:80)
-127.0.0.1:54522: GET http://www.google.com/gen_204
-              << 204 No Content 0b
-[21:06:45.295][127.0.0.1:54522] server disconnect www.google.com:80 (142.251.155.119:80)
-[21:06:45.296][127.0.0.1:54522] client disconnect
-127.0.0.1:40956: POST https://172.253.122.102/c2dm/register3
-              << 200 OK 152b
-127.0.0.1:40956: POST https://172.253.122.102/c2dm/register3
-              << 301 Moved Permanently 45b
-127.0.0.1:55200: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
-     << HTTP/2.0 400 Bad Request 50b
-[21:06:49.913][127.0.0.1:45674] client connect
-[21:06:49.919][127.0.0.1:45674] server connect 172.217.117.4:443
-127.0.0.1:51308: POST https://172.217.112.4/androidantiabuse/v1/x/create?alt=…
-              << 200 OK 61.3k
-[21:06:50.319][127.0.0.1:45682] client connect
-[21:06:50.333][127.0.0.1:45682] server connect 172.217.112.4:443
-127.0.0.1:45682: POST https://172.217.112.4/experimentsandconfigs/v1/getExper…
-              << 200 OK 469k
-127.0.0.1:45674: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
-     << HTTP/2.0 400 Bad Request 50b
-[21:06:50.940][127.0.0.1:45690] client connect
-[21:06:50.952][127.0.0.1:45690] server connect 142.251.111.154:443
-127.0.0.1:45690: GET https://142.251.111.154/pagead/conversion/964916429/?bu…
-              << 200 OK 0b
-[21:06:51.395][127.0.0.1:45702] client connect
-[21:06:51.407][127.0.0.1:45702] server connect 64.233.180.148:443
-127.0.0.1:45702: GET https://64.233.180.148/ddm/activity/src=2542116;type=yt…
-              << 302 Found 0b
-[21:06:51.950][127.0.0.1:45718] client connect
-[21:06:51.963][127.0.0.1:45718] server connect 142.250.31.156:443
-127.0.0.1:45718: GET https://142.250.31.156/ddm/fls/z/src=2542116;type=ytmus…
-              << 200 OK 42b
-127.0.0.1:45690: GET https://142.251.111.154/pagead/conversion/964916429/?bu…
-              << 200 OK 0b
-127.0.0.1:45674: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
-     << HTTP/2.0 400 Bad Request 50b
-127.0.0.1:51980: POST https://172.217.112.4/androidcheck/v1/attestations/adAt…
+127.0.0.1:57856: POST https://172.217.116.4/androidcheck/v1/attestations/adAt…
               << 200 OK 215b
-127.0.0.1:45702: GET https://64.233.180.148/ddm/activity/src=2542116;type=yt…
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
+              << 200 OK 160b
+[21:28:11.938][127.0.0.1:54974] client connect
+[21:28:11.939][127.0.0.1:54974] error establishing server connection: [Errno 101] Network is unreachable
+127.0.0.1:54974: CONNECT 2001:4860:482b:7700:::443
+              << 502 Bad Gateway 217b
+[21:28:11.942][127.0.0.1:54974] client disconnect
+[21:28:11.944][127.0.0.1:54976] client connect
+[21:28:11.958][127.0.0.1:54976] server connect 142.251.156.119:443
+[21:28:11.969][127.0.0.1:54980] client connect
+[21:28:11.994][127.0.0.1:54976] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:28:11.994][127.0.0.1:54976] client disconnect
+[21:28:11.995][127.0.0.1:54976] server disconnect 142.251.156.119:443
+[21:28:11.996][127.0.0.1:54980] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+127.0.0.1:54980: GET http://connectivitycheck.gstatic.com/generate_204
+              << 204 No Content 0b
+[21:28:12.021][127.0.0.1:54980] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:28:12.022][127.0.0.1:54980] client disconnect
+[21:28:12.046][127.0.0.1:54990] client connect
+[21:28:12.065][127.0.0.1:54990] server connect play.googleapis.com:80 (172.217.113.4:80)
+127.0.0.1:54990: GET http://play.googleapis.com/generate_204
+              << 204 No Content 0b
+[21:28:12.082][127.0.0.1:54990] server disconnect play.googleapis.com:80 (172.217.113.4:80)
+[21:28:12.082][127.0.0.1:54990] client disconnect
+127.0.0.1:57856: POST https://172.217.116.4/androidcheck/v1/attestations/adAt…
+              << 200 OK 216b
+[21:28:13.111][127.0.0.1:55000] client connect
+[21:28:13.159][127.0.0.1:55000] server connect 74.125.132.149:443
+127.0.0.1:57822: POST https://172.217.116.4/androidantiabuse/v1/x/create?alt=…
+              << 200 OK 76.1k
+127.0.0.1:55000: GET https://74.125.132.149/ddm/activity/src=2542116;type=yt…
               << 302 Found 0b
-127.0.0.1:45718: GET https://142.250.31.156/ddm/fls/z/src=2542116;type=ytmus…
+[21:28:13.369][127.0.0.1:55012] client connect
+[21:28:13.416][127.0.0.1:55012] server connect 142.250.125.156:443
+127.0.0.1:55012: GET https://142.250.125.156/ddm/fls/z/src=2542116;type=ytmu…
               << 200 OK 42b
-127.0.0.1:40956: POST https://172.253.122.102/c2dm/register3
-              << 400 Bad Request 39b
-[21:06:53.322][127.0.0.1:45728] client connect
-[21:06:53.330][127.0.0.1:45728] server connect 172.217.117.4:443
-[21:06:53.453][127.0.0.1:45738] client connect
-[21:06:53.458][127.0.0.1:45738] server connect 142.251.153.119:443
-127.0.0.1:45728: POST https://172.217.117.4/auth/devicekey
-              << 400 Bad Request 801b
-[21:06:53.564][127.0.0.1:45738] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:53.565][127.0.0.1:45738] client disconnect
-[21:06:53.566][127.0.0.1:45738] server disconnect 142.251.153.119:443
-[21:06:53.653][127.0.0.1:45740] client connect
-[21:06:53.673][127.0.0.1:45740] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:45740: GET http://connectivitycheck.gstatic.com/generate_204
+[21:28:13.964][127.0.0.1:55024] client connect
+[21:28:13.998][127.0.0.1:55024] server connect 192.178.209.156:443
+127.0.0.1:55024: GET https://192.178.209.156/pagead/conversion/964916429/?bu…
+              << 200 OK 0b
+127.0.0.1:55024: GET https://192.178.209.156/pagead/conversion/964916429/?bu…
+              << 200 OK 0b
+[21:28:14.542][127.0.0.1:55030] client connect
+[21:28:14.559][127.0.0.1:55030] server connect 172.217.117.4:443
+127.0.0.1:55000: GET https://74.125.132.149/ddm/activity/src=2542116;type=yt…
+              << 302 Found 0b
+[21:28:14.608][127.0.0.1:55032] client connect
+[21:28:14.626][127.0.0.1:55032] server connect 142.251.154.119:443
+127.0.0.1:55030: POST https://172.217.117.4/deviceregistration/v1/devices?key… HTTP/2.0
+     << HTTP/2.0 200 OK 229b
+127.0.0.1:55032: GET https://142.251.154.119/gmp/conversion/_dc_unique_id=20…
+              << 200 OK 42b
+127.0.0.1:55024: GET https://192.178.209.156/pagead/conversion/964916429/?bu…
+              << 200 OK 0b
+127.0.0.1:57822: POST https://172.217.116.4/androidantiabuse/v1/x/create?alt=…
+              << 200 OK 59.3k
+127.0.0.1:55030: POST https://172.217.117.4/youtubei/v1/visitor_id?key=AIzaSy… HTTP/2.0
+     << HTTP/2.0 200 OK 655b
+127.0.0.1:55030: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
+     << HTTP/2.0 400 Bad Request 50b
+[21:28:15.095][127.0.0.1:55040] client connect
+[21:28:15.110][127.0.0.1:55040] server connect 172.217.118.4:443
+127.0.0.1:55040: POST https://172.217.118.4/checkin
+              << 200 OK 463b
+[21:28:15.846][127.0.0.1:57896] client disconnect
+[21:28:15.850][127.0.0.1:57896] server disconnect 172.217.118.4:443
+127.0.0.1:55030: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
+     << HTTP/2.0 400 Bad Request 50b
+127.0.0.1:57950: GET https://173.194.64.113/config/app/1%3A493454522602%3Aan…
+              << 200 OK 1.0k
+127.0.0.1:57950: POST https://173.194.64.113/a
               << 204 No Content 0b
-[21:06:53.684][127.0.0.1:45740] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:06:53.684][127.0.0.1:45740] client disconnect
-[21:06:53.788][127.0.0.1:51310] client disconnect
-[21:06:53.789][127.0.0.1:51310] server disconnect 172.217.112.4:443
-[21:06:53.840][127.0.0.1:45746] client connect
-[21:06:53.856][127.0.0.1:45746] server connect play.googleapis.com:80 (172.217.115.4:80)
-127.0.0.1:45746: GET http://play.googleapis.com/generate_204
-              << 204 No Content 0b
-[21:06:53.865][127.0.0.1:45746] server disconnect play.googleapis.com:80 (172.217.115.4:80)
-[21:06:53.867][127.0.0.1:45746] client disconnect
-127.0.0.1:40956: POST https://172.253.122.102/c2dm/register3
-              << 200 OK 60b
-[21:06:55.116][127.0.0.1:45748] client connect
-[21:06:55.121][127.0.0.1:45748] error establishing server connection: [Errno 101] Network is unreachable
-127.0.0.1:45748: CONNECT 2001:4860:482d:7700:::443
+127.0.0.1:55030: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
+     << HTTP/2.0 400 Bad Request 50b
+[21:28:22.738][127.0.0.1:44170] client connect
+[21:28:22.739][127.0.0.1:44184] client connect
+[21:28:22.741][127.0.0.1:44170] error establishing server connection: [Errno 101] Network is unreachable
+127.0.0.1:44170: CONNECT 2001:4860:4828:7700:::443
               << 502 Bad Gateway 217b
-[21:06:55.124][127.0.0.1:45748] client disconnect
-[21:06:55.150][127.0.0.1:45750] client connect
-[21:06:55.163][127.0.0.1:45750] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:45750: GET http://connectivitycheck.gstatic.com/generate_204
+[21:28:22.745][127.0.0.1:44198] client connect
+[21:28:22.746][127.0.0.1:44170] client disconnect
+[21:28:22.763][127.0.0.1:44198] server connect 142.251.150.119:443
+[21:28:22.772][127.0.0.1:44184] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+127.0.0.1:44184: GET http://connectivitycheck.gstatic.com/generate_204
               << 204 No Content 0b
-[21:06:55.169][127.0.0.1:45750] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:06:55.170][127.0.0.1:45750] client disconnect
-[21:06:55.194][127.0.0.1:45756] client connect
-[21:06:55.201][127.0.0.1:45756] server connect 142.251.150.119:443
-[21:06:55.240][127.0.0.1:45756] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:06:55.241][127.0.0.1:45756] client disconnect
-[21:06:55.243][127.0.0.1:45756] server disconnect 142.251.150.119:443
-[21:06:55.305][127.0.0.1:45770] client connect
-[21:06:55.319][127.0.0.1:45770] server connect play.googleapis.com:80 (172.217.114.4:80)
-127.0.0.1:45770: GET http://play.googleapis.com/generate_204
+[21:28:22.799][127.0.0.1:44184] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:28:22.800][127.0.0.1:44184] client disconnect
+[21:28:22.878][127.0.0.1:44198] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:28:22.879][127.0.0.1:44198] client disconnect
+[21:28:22.880][127.0.0.1:44198] server disconnect 142.251.150.119:443
+[21:28:22.893][127.0.0.1:44206] client connect
+[21:28:22.912][127.0.0.1:44206] server connect play.googleapis.com:80 (172.217.114.4:80)
+127.0.0.1:44206: GET http://play.googleapis.com/generate_204
               << 204 No Content 0b
-[21:06:55.325][127.0.0.1:45770] server disconnect play.googleapis.com:80 (172.217.114.4:80)
-[21:06:55.326][127.0.0.1:45770] client disconnect
-127.0.0.1:45674: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
-     << HTTP/2.0 400 Bad Request 50b
-[21:06:56.910][127.0.0.1:45786] client connect
-[21:06:56.915][127.0.0.1:45786] server connect 172.217.112.4:443
-127.0.0.1:45786: POST https://172.217.112.4/experimentsandconfigs/v1/getExper…
-              << 200 OK 306k
-[21:06:57.778][127.0.0.1:51992] client disconnect
-[21:06:57.778][127.0.0.1:51992] server disconnect 142.251.150.119:443
-127.0.0.1:55200: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
-     << HTTP/2.0 400 Bad Request 50b
-127.0.0.1:45674: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
-     << HTTP/2.0 400 Bad Request 50b
-[21:07:05.929][127.0.0.1:45198] client connect
-[21:07:05.934][127.0.0.1:45198] server connect 172.217.112.4:443
-127.0.0.1:45198: POST https://172.217.112.4/experimentsandconfigs/v1/getExper…
-              << 200 OK 311k
-[21:07:06.999][127.0.0.1:40898] client disconnect
-[21:07:07.000][127.0.0.1:40898] server disconnect 172.217.112.4:443
-127.0.0.1:40956: POST https://172.253.122.102/c2dm/register3
-              << 200 OK 159b
-[21:07:10.335][127.0.0.1:36850] client connect
-[21:07:10.373][127.0.0.1:36850] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:36850: GET http://connectivitycheck.gstatic.com/generate_204
-              << 204 No Content 0b
-[21:07:10.381][127.0.0.1:36850] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:07:10.382][127.0.0.1:36850] client disconnect
-[21:07:10.456][127.0.0.1:36852] client connect
-[21:07:10.458][127.0.0.1:36852] error establishing server connection: [Errno 101] Network is unreachable
-127.0.0.1:36852: CONNECT 2001:4860:4826:7700:::443
-              << 502 Bad Gateway 217b
-[21:07:10.461][127.0.0.1:36852] client disconnect
-[21:07:10.467][127.0.0.1:36860] client connect
-[21:07:10.478][127.0.0.1:36860] server connect 142.251.154.119:443
-[21:07:10.821][127.0.0.1:36860] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:07:10.822][127.0.0.1:36860] client disconnect
-[21:07:10.825][127.0.0.1:36860] server disconnect 142.251.154.119:443
-[21:07:10.854][127.0.0.1:36874] client connect
-[21:07:10.874][127.0.0.1:36874] server connect www.google.com:80 (142.251.151.119:80)
-127.0.0.1:36874: GET http://www.google.com/gen_204
-              << 204 No Content 0b
-[21:07:10.889][127.0.0.1:36874] server disconnect www.google.com:80 (142.251.151.119:80)
-[21:07:10.890][127.0.0.1:36874] client disconnect
-[21:07:12.019][127.0.0.1:45718] client disconnect
-[21:07:12.020][127.0.0.1:45718] server disconnect 142.250.31.156:443
-[21:07:12.020][127.0.0.1:45702] client disconnect
-[21:07:12.021][127.0.0.1:45690] client disconnect
-[21:07:12.021][127.0.0.1:45674] client disconnect
-[21:07:12.022][127.0.0.1:45702] server disconnect 64.233.180.148:443
-[21:07:12.024][127.0.0.1:45690] server disconnect 142.251.111.154:443
-[21:07:12.025][127.0.0.1:45674] server disconnect 172.217.117.4:443
-[21:07:13.192][127.0.0.1:55170] client disconnect
-[21:07:13.193][127.0.0.1:55158] client disconnect
-[21:07:13.193][127.0.0.1:55170] server disconnect 172.217.112.4:443
-[21:07:13.194][127.0.0.1:55158] server disconnect 172.217.113.4:443
-127.0.0.1:40956: POST https://172.253.122.102/c2dm/register3
+[21:28:22.930][127.0.0.1:44206] server disconnect play.googleapis.com:80 (172.217.114.4:80)
+[21:28:22.931][127.0.0.1:44206] client disconnect
+[21:28:22.948][127.0.0.1:44482] client disconnect
+[21:28:22.949][127.0.0.1:44482] server disconnect 172.217.119.4:443
+[21:28:23.030][127.0.0.1:54964] client disconnect
+[21:28:23.031][127.0.0.1:54964] server disconnect 172.217.119.4:443
+[21:28:23.636][127.0.0.1:44210] client connect
+[21:28:23.640][127.0.0.1:44220] client connect
+[21:28:23.653][127.0.0.1:44210] server connect 172.217.119.4:443
+[21:28:23.661][127.0.0.1:44220] server connect 172.217.116.4:443
+127.0.0.1:44210: POST https://172.217.119.4/v1/projects/google.com:api-projec…
+              << 200 OK 495b
+127.0.0.1:44220: GET https://172.217.116.4/android_video/v1/config?make=Goog…
+              << 200 OK 1.2k
+[21:28:25.022][127.0.0.1:44224] client connect
+[21:28:25.045][127.0.0.1:44224] server connect 172.217.119.4:443
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
+              << 200 OK 160b
+[21:28:25.576][127.0.0.1:44228] client connect
+[21:28:25.683][127.0.0.1:44244] client connect
+[21:28:25.683][127.0.0.1:44254] client connect
+127.0.0.1:44224: POST https://172.217.119.4/v1/projects/google.com:youtube-an…
+              << 200 OK 493b
+[21:28:25.704][127.0.0.1:44244] server connect 172.217.117.4:443
+[21:28:25.709][127.0.0.1:44228] server connect 172.217.117.4:443
+[21:28:25.719][127.0.0.1:44254] server connect 192.178.209.156:443
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
               << 301 Moved Permanently 45b
-[21:07:22.264][127.0.0.1:53768] client connect
-[21:07:22.272][127.0.0.1:53768] server connect 172.217.112.4:443
-127.0.0.1:53768: POST https://172.217.112.4/experimentsandconfigs/v1/getExper…
-              << 200 OK 48.9k
-[21:07:22.984][127.0.0.1:45682] client disconnect
-[21:07:22.985][127.0.0.1:45682] server disconnect 172.217.112.4:443
-127.0.0.1:40956: POST https://172.253.122.102/c2dm/register3
-              << 400 Bad Request 39b
-127.0.0.1:45728: POST https://172.217.117.4/auth/devicekey
-              << 400 Bad Request 801b
-127.0.0.1:55200: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
-     << HTTP/2.0 400 Bad Request 50b
-[21:07:31.566][127.0.0.1:37940] client connect
-[21:07:31.572][127.0.0.1:37940] server connect 172.217.112.4:443
-127.0.0.1:51254: POST https://142.251.153.119/m/voice-search/down?pair=725854… HTTP/2.0
+[21:28:25.810][127.0.0.1:55032] client disconnect
+[21:28:25.810][127.0.0.1:55030] client disconnect
+[21:28:25.812][127.0.0.1:55024] client disconnect
+[21:28:25.813][127.0.0.1:55032] server disconnect 142.251.154.119:443
+[21:28:25.815][127.0.0.1:55030] server disconnect 172.217.117.4:443
+[21:28:25.816][127.0.0.1:55024] server disconnect 192.178.209.156:443
+[21:28:25.816][127.0.0.1:55012] client disconnect
+[21:28:25.816][127.0.0.1:55000] client disconnect
+[21:28:25.817][127.0.0.1:55012] server disconnect 142.250.125.156:443
+[21:28:25.818][127.0.0.1:55000] server disconnect 74.125.132.149:443
+[21:28:25.827][127.0.0.1:44264] client connect
+[21:28:25.846][127.0.0.1:44264] server connect 142.251.157.4:443
+127.0.0.1:44254: GET https://192.178.209.156/pagead/conversion/1001680686/?b…
+              << 200 OK 0b
+[21:28:25.990][127.0.0.1:44244] client disconnect
+[21:28:25.995][127.0.0.1:44244] server disconnect 172.217.117.4:443
+127.0.0.1:44264: GET https://142.251.157.4/csi_204?v=3&s=youtube_android&act… HTTP/2.0
+     << HTTP/2.0 204 No Content 0b
+127.0.0.1:44228: HEAD https://172.217.117.4/generate_204 HTTP/2.0
+     << HTTP/2.0 204 No Content 0b
+127.0.0.1:44228: POST https://172.217.117.4/deviceregistration/v1/devices?key… HTTP/2.0
+     << HTTP/2.0 200 OK 230b
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
+              << 200 OK 160b
+127.0.0.1:44398: POST https://142.251.154.119/m/voice-search/down?pair=dc1697… HTTP/2.0
      << HTTP/2.0 200 OK 87b
-127.0.0.1:51254: POST https://142.251.153.119/m/voice-search/up?pair=72585431… HTTP/2.0
+127.0.0.1:44398: POST https://142.251.154.119/m/voice-search/up?pair=dc1697d6… HTTP/2.0
      << HTTP/2.0 200 OK 0b
-127.0.0.1:37940: POST https://172.217.112.4/experimentsandconfigs/v1/getExper…
-              << 200 OK 180k
-[21:07:32.462][127.0.0.1:45786] client disconnect
-[21:07:32.463][127.0.0.1:45786] server disconnect 172.217.112.4:443
-[21:07:43.397][127.0.0.1:40904] client connect
-[21:07:43.411][127.0.0.1:40904] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:40904: GET http://connectivitycheck.gstatic.com/generate_204
-              << 204 No Content 0b
-[21:07:43.420][127.0.0.1:40904] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:07:43.423][127.0.0.1:40904] client disconnect
-[21:07:43.442][127.0.0.1:40908] client connect
-[21:07:43.448][127.0.0.1:40908] error establishing server connection: [Errno 101] Network is unreachable
-127.0.0.1:40908: CONNECT 2001:4860:482b:7700:::443
+127.0.0.1:44228: POST https://172.217.117.4/youtubei/v1/visitor_id?key=AIzaSy… HTTP/2.0
+     << HTTP/2.0 200 OK 655b
+127.0.0.1:44228: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
+     << HTTP/2.0 400 Bad Request 50b
+127.0.0.1:44228: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
+     << HTTP/2.0 400 Bad Request 50b
+127.0.0.1:44228: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
+     << HTTP/2.0 400 Bad Request 50b
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
+              << 200 OK 150b
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
+              << 301 Moved Permanently 45b
+[21:28:40.321][127.0.0.1:45056] client connect
+[21:28:40.349][127.0.0.1:45056] server connect 74.125.202.188:5228
+127.0.0.1:57822: POST https://172.217.116.4/androidantiabuse/v1/x/create?alt=…
+              << 200 OK 61.3k
+127.0.0.1:45056 -> tcp -> 74.125.202.188:5228
+127.0.0.1:45056 <- tcp <- 74.125.202.188:5228
+127.0.0.1:45056 <- tcp <- 74.125.202.188:5228
+127.0.0.1:44228: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
+     << HTTP/2.0 400 Bad Request 50b
+[21:28:42.066][127.0.0.1:45064] client connect
+[21:28:42.093][127.0.0.1:45076] client connect
+[21:28:42.099][127.0.0.1:45076] error establishing server connection: [Errno 101] Network is unreachable
+127.0.0.1:45076: CONNECT 2001:4860:482c:7700:::443
               << 502 Bad Gateway 217b
-[21:07:43.453][127.0.0.1:40908] client disconnect
-[21:07:43.457][127.0.0.1:40912] client connect
-[21:07:43.467][127.0.0.1:40912] server connect 142.251.153.119:443
-[21:07:44.001][127.0.0.1:40912] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:07:44.001][127.0.0.1:40912] client disconnect
-[21:07:44.004][127.0.0.1:40912] server disconnect 142.251.153.119:443
-[21:07:44.027][127.0.0.1:40922] client connect
-[21:07:44.050][127.0.0.1:40922] server connect play.googleapis.com:80 (172.217.118.4:80)
-127.0.0.1:40922: GET http://play.googleapis.com/generate_204
+[21:28:42.103][127.0.0.1:45076] client disconnect
+[21:28:42.106][127.0.0.1:45064] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:28:42.110][127.0.0.1:45084] client connect
+[21:28:42.127][127.0.0.1:45084] server connect 142.251.150.119:443
+127.0.0.1:45064: GET http://connectivitycheck.gstatic.com/generate_204
               << 204 No Content 0b
-[21:07:44.057][127.0.0.1:40922] server disconnect play.googleapis.com:80 (172.217.118.4:80)
-[21:07:44.058][127.0.0.1:40922] client disconnect
-[21:07:47.415][127.0.0.1:55218] client disconnect
-[21:07:47.416][127.0.0.1:55218] server disconnect 142.251.151.4:443
-[21:07:47.418][127.0.0.1:55200] client disconnect
-[21:07:47.418][127.0.0.1:55200] server disconnect 172.217.117.4:443
-[21:07:47.458][127.0.0.1:55206] client disconnect
-[21:07:47.459][127.0.0.1:55206] server disconnect 142.251.111.154:443
-[21:07:47.460][127.0.0.1:55194] client disconnect
-[21:07:47.461][127.0.0.1:55194] server disconnect 172.217.113.4:443
-[21:07:59.466][127.0.0.1:54240] client connect
-[21:07:59.471][127.0.0.1:54250] client connect
-[21:07:59.471][127.0.0.1:54240] server connect 142.251.151.119:443
-[21:07:59.502][127.0.0.1:54250] server connect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-127.0.0.1:54250: GET http://connectivitycheck.gstatic.com/generate_204
+[21:28:42.140][127.0.0.1:45064] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:28:42.145][127.0.0.1:45064] client disconnect
+[21:28:42.463][127.0.0.1:45084] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:28:42.464][127.0.0.1:45084] client disconnect
+[21:28:42.465][127.0.0.1:45084] server disconnect 142.251.150.119:443
+[21:28:43.002][127.0.0.1:45096] client connect
+[21:28:43.049][127.0.0.1:45096] server connect play.googleapis.com:80 (172.217.113.4:80)
+127.0.0.1:45096: GET http://play.googleapis.com/generate_204
               << 204 No Content 0b
-[21:07:59.517][127.0.0.1:54250] server disconnect connectivitycheck.gstatic.com:80 (64.233.180.94:80)
-[21:07:59.517][127.0.0.1:54240] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
-[21:07:59.520][127.0.0.1:54250] client disconnect
-[21:07:59.522][127.0.0.1:54240] client disconnect
-[21:07:59.523][127.0.0.1:54240] server disconnect 142.251.151.119:443
-[21:07:59.547][127.0.0.1:54258] client connect
-[21:07:59.561][127.0.0.1:54258] server connect play.googleapis.com:80 (172.217.119.4:80)
-127.0.0.1:54258: GET http://play.googleapis.com/generate_204
-              << 204 No Content 0b
-[21:07:59.567][127.0.0.1:54258] server disconnect play.googleapis.com:80 (172.217.119.4:80)
-[21:07:59.571][127.0.0.1:54258] client disconnect
-[21:08:08.764][127.0.0.1:45298] error establishing server connection: [Errno 110] Connect call failed ('10.0.2.3', 853)
-127.0.0.1:45298: CONNECT 10.0.2.3:853
+[21:28:43.084][127.0.0.1:45096] server disconnect play.googleapis.com:80 (172.217.113.4:80)
+[21:28:43.091][127.0.0.1:45096] client disconnect
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
+              << 429 unknown 40b
+[21:28:44.208][127.0.0.1:45104] client connect
+[21:28:44.232][127.0.0.1:45104] server connect 172.217.118.4:443
+[21:28:44.235][127.0.0.1:45112] client connect
+[21:28:44.291][127.0.0.1:45112] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:28:44.307][127.0.0.1:45122] client connect
+[21:28:44.310][127.0.0.1:45122] error establishing server connection: [Errno 101] Network is unreachable
+127.0.0.1:45122: CONNECT 2001:4860:482a:7700:::443
               << 502 Bad Gateway 217b
-[21:08:08.766][127.0.0.1:45298] client disconnect
-[21:08:08.780][127.0.0.1:55256] server disconnect 173.194.45.188:5228
-[21:08:08.781][127.0.0.1:51346] client disconnect
-[21:08:08.781][127.0.0.1:51254] client disconnect
-[21:08:08.781][127.0.0.1:40964] client disconnect
-[21:08:08.784][127.0.0.1:40956] client disconnect
-[21:08:08.785][127.0.0.1:40940] client disconnect
-[21:08:08.785][127.0.0.1:51240] client disconnect
-[21:08:08.785][127.0.0.1:40916] client disconnect
-[21:08:08.785][127.0.0.1:45728] client disconnect
-[21:08:08.786][127.0.0.1:55242] client disconnect
-[21:08:08.786][127.0.0.1:51980] client disconnect
-[21:08:08.786][127.0.0.1:37940] client disconnect
-[21:08:08.786][127.0.0.1:53768] client disconnect
-[21:08:08.787][127.0.0.1:40910] client disconnect
-[21:08:08.787][127.0.0.1:45198] client disconnect
-[21:08:08.787][127.0.0.1:40892] client disconnect
-[21:08:08.787][127.0.0.1:40884] client disconnect
-[21:08:08.787][127.0.0.1:51308] client disconnect
-[21:08:08.788][127.0.0.1:52034] client disconnect
-[21:08:08.792][127.0.0.1:51346] server disconnect 172.217.113.4:443
-[21:08:08.792][127.0.0.1:51254] server disconnect 142.251.153.119:443
-[21:08:08.793][127.0.0.1:40964] server disconnect 192.178.218.94:443
-[21:08:08.793][127.0.0.1:40956] server disconnect 172.253.122.102:443
-[21:08:08.794][127.0.0.1:40940] server disconnect 142.251.163.91:443
-[21:08:08.794][127.0.0.1:51240] server disconnect 173.194.45.94:443
-[21:08:08.803][127.0.0.1:40916] server disconnect 192.178.218.94:443
-[21:08:08.803][127.0.0.1:45728] server disconnect 172.217.117.4:443
-[21:08:08.804][127.0.0.1:55242] server disconnect 172.217.117.4:443
-[21:08:08.810][127.0.0.1:51980] server disconnect 172.217.112.4:443
-[21:08:08.811][127.0.0.1:37940] server disconnect 172.217.112.4:443
-[21:08:08.811][127.0.0.1:53768] server disconnect 172.217.112.4:443
-[21:08:08.812][127.0.0.1:40910] server disconnect 172.217.117.4:443
-[21:08:08.812][127.0.0.1:45198] server disconnect 172.217.112.4:443
-[21:08:08.813][127.0.0.1:40892] server disconnect 172.253.62.100:443
-[21:08:08.817][127.0.0.1:40884] server disconnect 172.217.112.4:443
-[21:08:08.818][127.0.0.1:51308] server disconnect 172.217.112.4:443
-[21:08:08.821][127.0.0.1:52034] server disconnect 172.217.112.4:443
-[21:08:08.824][127.0.0.1:55256] client disconnect
+[21:28:44.317][127.0.0.1:45122] client disconnect
+127.0.0.1:45112: GET http://connectivitycheck.gstatic.com/generate_204
+              << 204 No Content 0b
+[21:28:44.326][127.0.0.1:45112] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:28:44.326][127.0.0.1:45136] client connect
+[21:28:44.327][127.0.0.1:45112] client disconnect
+[21:28:44.346][127.0.0.1:45136] server connect 142.251.156.119:443
+127.0.0.1:57856: POST https://172.217.116.4/androidcheck/v1/attestations/adAt…
+              << 200 OK 215b
+[21:28:44.396][127.0.0.1:45136] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:28:44.397][127.0.0.1:45136] client disconnect
+[21:28:44.398][127.0.0.1:45136] server disconnect 142.251.156.119:443
+[21:28:44.444][127.0.0.1:45148] client connect
+[21:28:44.510][127.0.0.1:45148] server connect play.googleapis.com:80 (172.217.119.4:80)
+127.0.0.1:45148: GET http://play.googleapis.com/generate_204
+              << 204 No Content 0b
+[21:28:44.532][127.0.0.1:45148] server disconnect play.googleapis.com:80 (172.217.119.4:80)
+[21:28:44.534][127.0.0.1:45148] client disconnect
+[21:28:44.633][127.0.0.1:45158] client connect
+[21:28:44.681][127.0.0.1:45158] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+127.0.0.1:45158: GET http://connectivitycheck.gstatic.com/generate_204
+              << 204 No Content 0b
+[21:28:44.719][127.0.0.1:45158] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:28:44.723][127.0.0.1:45158] client disconnect
+[21:28:44.779][127.0.0.1:45162] client connect
+[21:28:44.781][127.0.0.1:45162] error establishing server connection: [Errno 101] Network is unreachable
+127.0.0.1:45162: CONNECT 2001:4860:482a:7700:::443
+              << 502 Bad Gateway 217b
+[21:28:44.784][127.0.0.1:45162] client disconnect
+[21:28:44.792][127.0.0.1:45176] client connect
+[21:28:44.817][127.0.0.1:45176] server connect 142.251.153.119:443
+[21:28:44.826][127.0.0.1:45178] client connect
+127.0.0.1:45104: POST https://172.217.118.4/auth/devicekey
+              << 400 Bad Request 801b
+[21:28:44.844][127.0.0.1:45178] server connect 172.217.116.4:443
+[21:28:44.873][127.0.0.1:45176] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:28:44.873][127.0.0.1:45176] client disconnect
+[21:28:44.874][127.0.0.1:45176] server disconnect 142.251.153.119:443
+[21:28:44.924][127.0.0.1:45182] client connect
+[21:28:44.961][127.0.0.1:45182] server connect www.google.com:80 (142.251.155.119:80)
+127.0.0.1:45182: GET http://www.google.com/gen_204
+              << 204 No Content 0b
+[21:28:44.999][127.0.0.1:45182] server disconnect www.google.com:80 (142.251.155.119:80)
+[21:28:45.000][127.0.0.1:45182] client disconnect
+127.0.0.1:45178: POST https://172.217.116.4/experimentsandconfigs/v1/getExper…
+              << 200 OK 242k
+[21:28:45.375][127.0.0.1:57832] client disconnect
+[21:28:45.377][127.0.0.1:57832] server disconnect 172.217.116.4:443
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
+              << 429 unknown 40b
+[21:28:47.321][127.0.0.1:45190] client connect
+[21:28:47.357][127.0.0.1:45206] client connect
+[21:28:47.374][127.0.0.1:45190] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:28:47.378][127.0.0.1:45206] server connect 142.251.154.119:443
+127.0.0.1:45190: GET http://connectivitycheck.gstatic.com/generate_204
+              << 204 No Content 0b
+[21:28:47.422][127.0.0.1:45190] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:28:47.424][127.0.0.1:45190] client disconnect
+[21:28:47.531][127.0.0.1:45206] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:28:47.532][127.0.0.1:45206] client disconnect
+[21:28:47.533][127.0.0.1:45206] server disconnect 142.251.154.119:443
+[21:28:47.560][127.0.0.1:45222] client connect
+[21:28:47.585][127.0.0.1:45222] server connect www.google.com:80 (142.251.156.119:80)
+127.0.0.1:45222: GET http://www.google.com/gen_204
+              << 204 No Content 0b
+[21:28:47.612][127.0.0.1:45222] server disconnect www.google.com:80 (142.251.156.119:80)
+[21:28:47.617][127.0.0.1:45222] client disconnect
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
+              << 200 OK 159b
+127.0.0.1:44228: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
+     << HTTP/2.0 400 Bad Request 50b
+[21:28:51.962][127.0.0.1:44220] client disconnect
+[21:28:51.963][127.0.0.1:44210] client disconnect
+[21:28:51.963][127.0.0.1:44220] server disconnect 172.217.116.4:443
+[21:28:51.963][127.0.0.1:44210] server disconnect 172.217.119.4:443
+[21:28:52.101][127.0.0.1:40758] client connect
+[21:28:52.136][127.0.0.1:40758] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+127.0.0.1:40758: GET http://connectivitycheck.gstatic.com/generate_204
+              << 204 No Content 0b
+[21:28:52.164][127.0.0.1:40758] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:28:52.165][127.0.0.1:40758] client disconnect
+[21:28:52.201][127.0.0.1:40766] client connect
+[21:28:52.221][127.0.0.1:40766] server connect 142.251.155.119:443
+[21:28:52.239][127.0.0.1:40768] client connect
+[21:28:52.254][127.0.0.1:40768] server connect 172.217.116.4:443
+[21:28:52.491][127.0.0.1:40766] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:28:52.491][127.0.0.1:40766] client disconnect
+[21:28:52.492][127.0.0.1:40766] server disconnect 142.251.155.119:443
+[21:28:52.502][127.0.0.1:40778] client connect
+[21:28:52.524][127.0.0.1:40778] server connect www.google.com:80 (142.251.155.119:80)
+127.0.0.1:40778: GET http://www.google.com/gen_204
+              << 204 No Content 0b
+[21:28:52.570][127.0.0.1:40778] server disconnect www.google.com:80 (142.251.155.119:80)
+[21:28:52.571][127.0.0.1:40778] client disconnect
+127.0.0.1:40768: POST https://172.217.116.4/experimentsandconfigs/v1/getExper…
+              << 200 OK 190k
+[21:28:52.877][127.0.0.1:57880] client disconnect
+[21:28:52.878][127.0.0.1:57880] server disconnect 172.217.116.4:443
+[21:28:53.712][127.0.0.1:44228] client disconnect
+[21:28:53.713][127.0.0.1:44228] server disconnect 172.217.117.4:443
+[21:28:53.714][127.0.0.1:44264] client disconnect
+[21:28:53.715][127.0.0.1:44254] client disconnect
+[21:28:53.715][127.0.0.1:44264] server disconnect 142.251.157.4:443
+[21:28:53.720][127.0.0.1:44254] server disconnect 192.178.209.156:443
+[21:28:53.721][127.0.0.1:44224] client disconnect
+[21:28:53.723][127.0.0.1:44224] server disconnect 172.217.119.4:443
+[21:28:54.467][127.0.0.1:40782] client connect
+[21:28:54.484][127.0.0.1:40782] server connect 172.217.117.4:443
+127.0.0.1:40782: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
+     << HTTP/2.0 400 Bad Request 50b
+127.0.0.1:44398: POST https://142.251.154.119/m/voice-search/down?pair=bac812… HTTP/2.0
+     << HTTP/2.0 200 OK 87b
+127.0.0.1:44398: POST https://142.251.154.119/m/voice-search/up?pair=bac8128e… HTTP/2.0
+     << HTTP/2.0 200 OK 0b
+[21:28:56.273][127.0.0.1:40788] client connect
+[21:28:56.308][127.0.0.1:40788] server connect 192.178.209.156:443
+127.0.0.1:40782: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
+     << HTTP/2.0 400 Bad Request 50b
+127.0.0.1:40788: GET https://192.178.209.156/pagead/conversion/964916429/?bu…
+              << 200 OK 0b
+[21:28:57.083][127.0.0.1:40804] client connect
+[21:28:57.131][127.0.0.1:40804] server connect 74.125.201.148:443
+127.0.0.1:40804: GET https://74.125.201.148/ddm/activity/src=2542116;type=yt…
+              << 302 Found 0b
+[21:28:57.663][127.0.0.1:40812] client connect
+[21:28:57.708][127.0.0.1:40812] server connect 142.250.125.156:443
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
+              << 301 Moved Permanently 45b
+127.0.0.1:40812: GET https://142.250.125.156/ddm/fls/z/src=2542116;type=ytmu…
+              << 200 OK 42b
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
+              << 301 Moved Permanently 45b
+127.0.0.1:40804: GET https://74.125.201.148/ddm/activity/src=2542116;type=yt…
+              << 302 Found 0b
+127.0.0.1:40812: GET https://142.250.125.156/ddm/fls/z/src=2542116;type=ytmu…
+              << 200 OK 42b
+127.0.0.1:40804: GET https://74.125.201.148/ddm/activity/src=2542116;type=yt…
+              << 302 Found 0b
+127.0.0.1:40812: GET https://142.250.125.156/ddm/fls/z/src=2542116;type=ytmu…
+              << 200 OK 42b
+[21:28:58.736][127.0.0.1:60060] client connect
+[21:28:58.761][127.0.0.1:60060] server connect 172.217.117.4:443
+127.0.0.1:40782: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
+     << HTTP/2.0 400 Bad Request 50b
+[21:28:59.023][127.0.0.1:60074] client connect
+[21:28:59.063][127.0.0.1:60074] server connect 192.178.209.156:443
+127.0.0.1:60060: HEAD https://172.217.117.4/generate_204 HTTP/2.0
+     << HTTP/2.0 204 No Content 0b
+127.0.0.1:60074: GET https://192.178.209.156/pagead/conversion/1001680686/?b…
+              << 200 OK 0b
+[21:28:59.340][127.0.0.1:60090] client connect
+[21:28:59.363][127.0.0.1:60090] server connect 142.251.157.4:443
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
+              << 301 Moved Permanently 45b
+127.0.0.1:60090: GET https://142.251.157.4/csi_204?v=3&s=youtube_android&act… HTTP/2.0
+     << HTTP/2.0 204 No Content 0b
+[21:29:00.933][127.0.0.1:60106] client connect
+[21:29:00.947][127.0.0.1:60108] client connect
+[21:29:00.965][127.0.0.1:60108] server connect 142.251.152.119:443
+[21:29:00.998][127.0.0.1:60106] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+127.0.0.1:60106: GET http://connectivitycheck.gstatic.com/generate_204
+              << 204 No Content 0b
+[21:29:01.054][127.0.0.1:60106] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:29:01.055][127.0.0.1:60106] client disconnect
+[21:29:01.059][127.0.0.1:60108] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:29:01.060][127.0.0.1:60108] client disconnect
+[21:29:01.061][127.0.0.1:60108] server disconnect 142.251.152.119:443
+[21:29:01.597][127.0.0.1:60110] client connect
+[21:29:01.639][127.0.0.1:60110] server connect play.googleapis.com:80 (172.217.112.4:80)
+127.0.0.1:60110: GET http://play.googleapis.com/generate_204
+              << 204 No Content 0b
+[21:29:01.653][127.0.0.1:60110] server disconnect play.googleapis.com:80 (172.217.112.4:80)
+[21:29:01.654][127.0.0.1:60110] client disconnect
+127.0.0.1:40782: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
+     << HTTP/2.0 400 Bad Request 50b
+[21:29:05.633][127.0.0.1:60124] client connect
+[21:29:05.650][127.0.0.1:60124] server connect 172.217.116.4:443
+127.0.0.1:60124: POST https://172.217.116.4/experimentsandconfigs/v1/getExper…
+              << 200 OK 104k
+[21:29:06.346][127.0.0.1:54958] client disconnect
+[21:29:06.347][127.0.0.1:54958] server disconnect 172.217.116.4:443
+[21:29:10.189][127.0.0.1:57822] client disconnect
+[21:29:10.190][127.0.0.1:57822] server disconnect 172.217.116.4:443
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
+              << 301 Moved Permanently 45b
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
+              << 301 Moved Permanently 45b
+[21:29:18.531][127.0.0.1:46582] client connect
+[21:29:18.550][127.0.0.1:46592] client connect
+[21:29:18.565][127.0.0.1:46592] server connect 142.251.155.119:443
+[21:29:18.584][127.0.0.1:46582] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+127.0.0.1:46582: GET http://connectivitycheck.gstatic.com/generate_204
+              << 204 No Content 0b
+[21:29:18.637][127.0.0.1:46582] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:29:18.648][127.0.0.1:46582] client disconnect
+[21:29:18.695][127.0.0.1:46592] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:29:18.696][127.0.0.1:46592] client disconnect
+[21:29:18.697][127.0.0.1:46592] server disconnect 142.251.155.119:443
+[21:29:18.715][127.0.0.1:46600] client connect
+[21:29:18.742][127.0.0.1:46600] server connect www.google.com:80 (142.251.153.119:80)
+127.0.0.1:46600: GET http://www.google.com/gen_204
+              << 204 No Content 0b
+[21:29:18.777][127.0.0.1:46600] server disconnect www.google.com:80 (142.251.153.119:80)
+[21:29:18.778][127.0.0.1:46600] client disconnect
+127.0.0.1:40782: POST https://172.217.117.4/youtubei/v1/notification_registra… HTTP/2.0
+     << HTTP/2.0 400 Bad Request 50b
+127.0.0.1:44398: POST https://142.251.154.119/m/voice-search/down?pair=c12a56… HTTP/2.0
+     << HTTP/2.0 200 OK 87b
+127.0.0.1:44398: POST https://142.251.154.119/m/voice-search/up?pair=c12a56a9… HTTP/2.0
+     << HTTP/2.0 200 OK 0b
+127.0.0.1:54972: POST https://64.233.181.101/c2dm/register3
+              << 301 Moved Permanently 45b
+[21:29:21.691][127.0.0.1:46614] client connect
+[21:29:21.713][127.0.0.1:46614] server connect 172.217.116.4:443
+127.0.0.1:46614: POST https://172.217.116.4/experimentsandconfigs/v1/getExper…
+              << 200 OK 223k
+[21:29:22.275][127.0.0.1:45104] client disconnect
+[21:29:22.276][127.0.0.1:45104] server disconnect 172.217.118.4:443
+[21:29:40.394][127.0.0.1:40812] client disconnect
+[21:29:40.395][127.0.0.1:40812] server disconnect 142.250.125.156:443
+[21:29:40.397][127.0.0.1:40804] client disconnect
+[21:29:40.398][127.0.0.1:40788] client disconnect
+[21:29:40.398][127.0.0.1:40782] client disconnect
+[21:29:40.399][127.0.0.1:40804] server disconnect 74.125.201.148:443
+[21:29:40.400][127.0.0.1:40788] server disconnect 192.178.209.156:443
+[21:29:40.401][127.0.0.1:40782] server disconnect 172.217.117.4:443
+[21:29:48.609][127.0.0.1:52414] client connect
+[21:29:48.610][127.0.0.1:52428] client connect
+[21:29:48.612][127.0.0.1:52414] error establishing server connection: [Errno 101] Network is unreachable
+127.0.0.1:52414: CONNECT 2001:4860:4828:7700:::443
+              << 502 Bad Gateway 217b
+[21:29:48.613][127.0.0.1:52414] client disconnect
+[21:29:48.615][127.0.0.1:52444] client connect
+[21:29:48.635][127.0.0.1:52444] server connect 142.251.150.119:443
+[21:29:48.647][127.0.0.1:52428] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+127.0.0.1:52428: GET http://connectivitycheck.gstatic.com/generate_204
+              << 204 No Content 0b
+[21:29:48.683][127.0.0.1:52428] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:29:48.683][127.0.0.1:52428] client disconnect
+[21:29:48.750][127.0.0.1:52444] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:29:48.751][127.0.0.1:52444] client disconnect
+[21:29:48.753][127.0.0.1:52444] server disconnect 142.251.150.119:443
+[21:29:48.786][127.0.0.1:52452] client connect
+[21:29:48.815][127.0.0.1:52452] server connect www.google.com:80 (142.251.150.119:80)
+127.0.0.1:52452: GET http://www.google.com/gen_204
+              << 204 No Content 0b
+[21:29:48.849][127.0.0.1:52452] server disconnect www.google.com:80 (142.251.150.119:80)
+[21:29:48.856][127.0.0.1:52452] client disconnect
+[21:29:51.340][127.0.0.1:52454] client connect
+[21:29:51.353][127.0.0.1:52458] client connect
+[21:29:51.364][127.0.0.1:52454] server connect 142.251.151.119:443
+[21:29:51.388][127.0.0.1:52458] server connect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+127.0.0.1:52458: GET http://connectivitycheck.gstatic.com/generate_204
+              << 204 No Content 0b
+[21:29:51.422][127.0.0.1:52458] server disconnect connectivitycheck.gstatic.com:80 (142.251.184.94:80)
+[21:29:51.424][127.0.0.1:52458] client disconnect
+[21:29:51.443][127.0.0.1:52454] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'tls alert certificate unknown')]))
+[21:29:51.443][127.0.0.1:52454] client disconnect
+[21:29:51.444][127.0.0.1:52454] server disconnect 142.251.151.119:443
+[21:29:51.458][127.0.0.1:52470] client connect
+[21:29:51.519][127.0.0.1:52470] server connect play.googleapis.com:80 (172.217.112.4:80)
+127.0.0.1:52470: GET http://play.googleapis.com/generate_204
+              << 204 No Content 0b
+[21:29:51.536][127.0.0.1:52470] server disconnect play.googleapis.com:80 (172.217.112.4:80)
+[21:29:51.538][127.0.0.1:52470] client disconnect
+[21:29:59.518][127.0.0.1:45012] error establishing server connection: [Errno 110] Connect call failed ('10.0.2.3', 853)
+127.0.0.1:45012: CONNECT 10.0.2.3:853
+              << 502 Bad Gateway 217b
+[21:29:59.522][127.0.0.1:45012] client disconnect
+[21:29:59.528][127.0.0.1:44398] client disconnect
+[21:29:59.528][127.0.0.1:44398] server disconnect 142.251.154.119:443
+[21:29:59.533][127.0.0.1:45056] server disconnect 74.125.202.188:5228
+[21:29:59.539][127.0.0.1:40768] client disconnect
+[21:29:59.539][127.0.0.1:60090] client disconnect
+[21:29:59.539][127.0.0.1:44390] client disconnect
+[21:29:59.539][127.0.0.1:60074] client disconnect
+[21:29:59.539][127.0.0.1:44376] client disconnect
+[21:29:59.540][127.0.0.1:57956] client disconnect
+[21:29:59.540][127.0.0.1:57950] client disconnect
+[21:29:59.540][127.0.0.1:60060] client disconnect
+[21:29:59.540][127.0.0.1:45178] client disconnect
+[21:29:59.540][127.0.0.1:57942] client disconnect
+[21:29:59.540][127.0.0.1:57902] client disconnect
+[21:29:59.541][127.0.0.1:55040] client disconnect
+[21:29:59.541][127.0.0.1:57894] client disconnect
+[21:29:59.541][127.0.0.1:57856] client disconnect
+[21:29:59.541][127.0.0.1:54972] client disconnect
+[21:29:59.544][127.0.0.1:54966] client disconnect
+[21:29:59.544][127.0.0.1:46614] client disconnect
+[21:29:59.544][127.0.0.1:60124] client disconnect
+[21:29:59.545][127.0.0.1:40768] server disconnect 172.217.116.4:443
+[21:29:59.545][127.0.0.1:60090] server disconnect 142.251.157.4:443
+[21:29:59.546][127.0.0.1:44390] server disconnect 142.251.184.94:443
+[21:29:59.546][127.0.0.1:60074] server disconnect 192.178.209.156:443
+[21:29:59.552][127.0.0.1:44376] server disconnect 172.217.119.4:443
+[21:29:59.553][127.0.0.1:57956] server disconnect 142.250.152.94:443
+[21:29:59.553][127.0.0.1:57950] server disconnect 173.194.64.113:443
+[21:29:59.554][127.0.0.1:60060] server disconnect 172.217.117.4:443
+[21:29:59.554][127.0.0.1:45178] server disconnect 172.217.116.4:443
+[21:29:59.554][127.0.0.1:57942] server disconnect 173.194.195.136:443
+[21:29:59.555][127.0.0.1:57902] server disconnect 142.250.152.94:443
+[21:29:59.561][127.0.0.1:55040] server disconnect 172.217.118.4:443
+[21:29:59.562][127.0.0.1:57894] server disconnect 172.217.112.4:443
+[21:29:59.562][127.0.0.1:57856] server disconnect 172.217.116.4:443
+[21:29:59.562][127.0.0.1:54972] server disconnect 64.233.181.101:443
+[21:29:59.563][127.0.0.1:54966] server disconnect 172.217.118.4:443
+[21:29:59.563][127.0.0.1:46614] server disconnect 172.217.116.4:443
+[21:29:59.564][127.0.0.1:60124] server disconnect 172.217.116.4:443
+[21:29:59.570][127.0.0.1:45056] client disconnect
