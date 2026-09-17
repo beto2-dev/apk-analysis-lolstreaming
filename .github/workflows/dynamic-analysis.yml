@@ -18,8 +18,8 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq wget unzip xz-utils python3-pip
-          python3 -m pip install --quiet frida-tools mitmproxy
-          echo "frida instalado: $(frida --version)"
+          python3 -m pip install --quiet "frida==16.4.10" "frida-tools<13" mitmproxy
+          echo "frida instalado: $(frida --version) (puente Java incluido)"
 
       - name: Configurar SDK de Android
         run: |
@@ -69,8 +69,8 @@ jobs:
           fi
           nohup "$ANDROID_HOME/emulator/emulator" -avd auditoria \
             -no-window -no-audio -no-boot-anim -no-snapshot -no-metrics \
-            -gpu swiftshader_indirect -writable-system \
-            -http-proxy http://10.0.2.2:8080 > dynamic/logs/emulator.txt 2>&1 &
+            -gpu swiftshader_indirect -writable-system -feature -NetSim \
+            -http-proxy http://127.0.0.1:8080 > dynamic/logs/emulator.txt 2>&1 &
           timeout 420 "$ADB" wait-for-device || true
           BOOT=0
           for i in $(seq 1 60); do
@@ -133,8 +133,12 @@ jobs:
           echo "paquete instalado: $PKG"
           echo "PKG=$PKG" >> "$GITHUB_ENV"
           timeout 300 "$ADB" install -r sample.apk
+          echo "ABIs soportados por la imagen:"; timeout 30 "$ADB" shell getprop ro.product.cpu.abilist || true
+          nohup timeout 420 "$ADB" logcat -v time > dynamic/logs/logcat_ejecucion.txt 2>&1 &
+          sleep 5
           timeout 330 python3 scripts/frida/run_hooks.py "$PKG" scripts/frida/hooks.js dynamic/logs/frida_hooks.txt 300 \
             || { echo "frida fallo, lanzamiento alternativo con monkey"; timeout 60 "$ADB" shell monkey -p "$PKG" -c android.intent.category.LAUNCHER 1; }
+          echo "procesos de la app tras la ejecucion:"; timeout 30 "$ADB" shell "pidof $PKG" || echo "(la app no esta en ejecucion)"
 
       - name: Tiempo de observacion y recoleccion de datos
         if: always()
