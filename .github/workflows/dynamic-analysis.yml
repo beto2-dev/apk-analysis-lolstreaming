@@ -94,9 +94,19 @@ jobs:
       - name: Instalar CA de mitmproxy en el almacen del sistema
         run: |
           ADB="$ANDROID_HOME/platform-tools/adb"
+          H=$(openssl x509 -inform PEM -subject_hash_old -in ~/.mitmproxy/mitmproxy-ca.pem | head -1)
           "$ADB" root && sleep 5
           "$ADB" remount || true
-          H=$(openssl x509 -inform PEM -subject_hash_old -in ~/.mitmproxy/mitmproxy-ca.pem | head -1)
+          # overlayfs exige un reinicio para dejar /system escribible
+          "$ADB" reboot || true
+          timeout 300 "$ADB" wait-for-device || true
+          for i in $(seq 1 40); do
+            B=$("$ADB" shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
+            if [ "$B" = "1" ]; then echo "reinicio completado tras $((i*5))s"; break; fi
+            sleep 5
+          done
+          "$ADB" root && sleep 5
+          "$ADB" remount || true
           "$ADB" push ~/.mitmproxy/mitmproxy-ca-cert.pem /system/etc/security/cacerts/"${H}".0
           "$ADB" shell chmod 644 /system/etc/security/cacerts/"${H}".0
           "$ADB" shell 'ls /system/etc/security/cacerts | wc -l'
