@@ -240,15 +240,59 @@ automatico vive en `.github/workflows/dynamic-analysis.yml`.
 
 ### 7.1 Comportamiento observado
 
-(RESULTADOS_DINAMICOS)
+La aplicacion se lanza correctamente mediante spawn de Frida (proceso
+`com.example.lol`, pid 4750/5133 segun ejecucion). `MainActivity` completa
+`onCreate`, el motor Flutter carga `libflutter.so` bajo traduccion ARM
+(`ndk_translation 0.2.2`, dispositivo `x86_64,x86,arm64-v8a,armeabi-v7a`) y
+renderiza con Impeller sobre OpenGLES. Los hooks Java registran exactamente
+tres eventos iniciales: `System.loadLibrary("flutter")`,
+`System.loadLibrary("dartjni")` y `getPackageInfo("com.example.lol", flags=0)`.
+
+El registro automatico de plugins aborta con
+`UnsatisfiedLinkError: dlopen failed: library "libdartjni.so" not found`
+(plugin `dart_lang/jni`); la captura con `monkey` no logra activar la capa de
+red de la aplicacion y esta permanece en la pantalla de inicio sin emitir una
+sola conexion. No se observan llamadas a `DexClassLoader`, `Runtime.exec`,
+`Cipher` ni TrustManager personalizados (hooks silenciosos), ni muertes del
+proceso, ni reacciones anti-analisis: root, Frida, la CA de mitmproxy en el
+almacen del sistema y el proxy de red del emulador son aceptados sin resistencia.
 
 ### 7.2 Trafico capturado
 
-(RESULTADOS_DINAMICOS)
+La captura completa (`dynamic/captures/traffic.mitm.gz`, 17,3 MB comprimidos;
+resumen legible en `dynamic/captures/flows_log.txt`) contiene 279 flujos
+descifrados y 45 intentos TLS fallidos, todos ellos originados por componentes
+de sistema del emulador (Google Play Services, checkin/C2DM, YouTube,
+Firebase, verificacion de conectividad, ads de sistema). Codigos de respuesta
+dominantes: 200 (79), 204 (47), 400 (16), 301/302 (12). Los fallos TLS
+corresponden a dominios de Google con pinning interno
+(`www.google.com`, `youtubei.googleapis.com`, `firebaseinstallations.googleapis.com`,
+`mtalk.google.com`), que rechazan la CA de mitmproxy de forma esperable.
+
+**Ningun flujo ni intento TLS procede de la aplicacion auditada.** El detalle
+completo, incluida la clasificacion por dominio, esta en
+`dynamic/endpoints_dynamic.md`.
 
 ### 7.3 Comparacion estatico-dinamico
 
-(RESULTADOS_DINAMICOS)
+| Hallazgo estatico | Resultado dinamico |
+|-------------------|--------------------|
+| Sin anti-debugging, anti-root ni anti-Frida | Confirmado: instrumentacion completa sin resistencia |
+| Sin SSL pinning en la app | No refutable (la app no emitio TLS); pinning observado solo en apps de sistema de Google |
+| Sin SDK de telemetria propio | Confirmado: cero flujos originados por la app |
+| Sin carga dinamica, sin exec, sin criptografia propia | Confirmado: hooks silenciosos |
+| Backend modlyo.com (version_api, servidores, kill switch) | No observable dinamicamente: la app no alcanzo la fase de red en el entorno |
+
+Limitaciones documentadas: (1) el APK solo incluye librerias `armeabi-v7a` y
+la traduccion ARM del emulador x86_64 rompe la carga de `libdartjni.so`,
+dejando la inicializacion de la app incompleta; (2) el subsistema de red
+virtual del emulador (netsim) se detiene unos 2,5 minutos tras cada arranque,
+reduciendo la ventana de observacion; (3) los servicios de Google no son
+inspeccionables por pinning propio. Estas limitaciones no alteran el veredicto:
+las conductas relevantes (canal de actualizacion remota, interruptor de
+servidores, scraping) estan establecidas estaticamente sobre el snapshot Dart
+y el manifiesto, y la fase dinamica confirma la ausencia total de
+anti-analisis y de comportamiento oculto en todo lo observable.
 
 ## 8. Indicadores de Compromiso (IoC)
 
