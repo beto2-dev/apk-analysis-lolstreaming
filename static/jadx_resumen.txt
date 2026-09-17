@@ -1,0 +1,55 @@
+# Resumen de la descompilacion con jadx 1.5.1
+- Clases procesadas: 1530 (13 con errores menores de decompilacion)
+- Ofuscacion: nombres de paquete/clase acortados por R8 (a, a0, b3, q1, ...)
+
+## Paquetes de primer nivel (conteo de clases)
+androidx: 137
+io: 100
+f1: 67
+u3: 66
+t5: 64
+a0: 62
+i0: 57
+p0: 49
+a5: 48
+e: 47
+org: 46
+b1: 44
+r0: 37
+l0: 36
+n1: 35
+l1: 35
+v: 34
+f4: 33
+u2: 32
+v4: 31
+
+## Paquetes con nombre legible (librerias)
+static/jadx_output/sources/androidx
+static/jadx_output/sources/androidx/datastore
+static/jadx_output/sources/androidx/datastore/preferences
+static/jadx_output/sources/androidx/datastore/preferences/protobuf
+static/jadx_output/sources/androidx/recyclerview
+static/jadx_output/sources/androidx/recyclerview/widget
+static/jadx_output/sources/androidx/profileinstaller
+static/jadx_output/sources/androidx/media3
+static/jadx_output/sources/androidx/media3/exoplayer
+static/jadx_output/sources/androidx/media3/exoplayer/dash
+static/jadx_output/sources/androidx/media3/exoplayer/smoothstreaming
+static/jadx_output/sources/androidx/media3/exoplayer/hls
+static/jadx_output/sources/androidx/lifecycle
+static/jadx_output/sources/androidx/preference
+static/jadx_output/sources/androidx/preference/internal
+static/jadx_output/sources/androidx/startup
+static/jadx_output/sources/androidx/versionedparcelable
+static/jadx_output/sources/androidx/window
+static/jadx_output/sources/androidx/window/area
+static/jadx_output/sources/androidx/window/area/reflectionguard
+static/jadx_output/sources/androidx/window/layout
+static/jadx_output/sources/androidx/window/layout/adapter
+static/jadx_output/sources/androidx/window/extensions
+static/jadx_output/sources/androidx/window/extensions/core
+static/jadx_output/sources/androidx/appcompat
+
+## Regenerar
+jadx -d static/jadx_output sample.apk

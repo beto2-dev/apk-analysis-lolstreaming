@@ -1,0 +1,32 @@
+version: 2.9.3
+apkFileName: sample.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+  tag: null
+sdkInfo:
+  minSdkVersion: 24
+  targetSdkVersion: 36
+packageInfo:
+  forcedPackageId: 127
+  renameManifestPackage: null
+versionInfo:
+  versionCode: 1001
+  versionName: 1.0.0
+resourcesAreCompressed: false
+sharedLibrary: false
+sparseResources: false
+unknownFiles:
+  DebugProbesKt.bin: 8
+  kotlin-tooling-metadata.json: 8
+doNotCompress:
+- resources.arsc
+- assets/dexopt/baseline.prof
+- assets/dexopt/baseline.profm
+- png
+- jpg
+- lib/armeabi-v7a/libapp.so
+- lib/armeabi-v7a/libdartjni.so
+- lib/armeabi-v7a/libdatastore_shared_counter.so
+- lib/armeabi-v7a/libflutter.so

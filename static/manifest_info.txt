@@ -1,0 +1,32 @@
+# Metadatos del APK
+
+- Paquete: com.example.lol
+- versionName: 1.0.0 / versionCode: 1001
+- minSdk: 24 / targetSdk: 36
+- App label: lol
+- Actividad principal: com.example.lol.MainActivity
+- Permisos (10):
+  - android.permission.ACCESS_NETWORK_STATE
+  - android.permission.INTERNET
+  - android.permission.READ_EXTERNAL_STORAGE
+  - android.permission.READ_MEDIA_AUDIO
+  - android.permission.READ_MEDIA_IMAGES
+  - android.permission.READ_MEDIA_VIDEO
+  - android.permission.REQUEST_INSTALL_PACKAGES
+  - android.permission.WAKE_LOCK
+  - android.permission.WRITE_EXTERNAL_STORAGE
+  - com.example.lol.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+- Actividades (2):
+  - com.example.lol.MainActivity
+  - io.flutter.plugins.urllauncher.WebViewActivity
+- Servicios (0):
+- Receptores (1):
+  - androidx.profileinstaller.ProfileInstallReceiver
+- Proveedores (3):
+  - androidx.core.content.FileProvider
+  - androidx.startup.InitializationProvider
+  - com.crazecoder.openfile.FileProvider
+- application/@usesCleartextTraffic: true
+- application/@extractNativeLibs: false
+- application/@name: android.app.Application
+- application/@appComponentFactory: androidx.core.app.CoreComponentFactory

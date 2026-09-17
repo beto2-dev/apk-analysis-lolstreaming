@@ -1,0 +1,9 @@
+# Certificados de firma del APK
+
+Esquema de firma: APK Signature Scheme v2 (1 certificado(s))
+
+Asunto:    Common Name: Android Debug, Organization: Android, Country: US
+Emisor:     Common Name: Android Debug, Organization: Android, Country: US
+Serie:      0x1
+Validez:    2026-09-03 23:30:31+00:00 -> 2056-08-26 23:30:31+00:00
+SHA-256:    44:ac:4c:9a:6b:22:95:96:31:3c:89:db:15:72:ab:8b:9b:fa:bb:35:a4:86:18:81:4a:0a:02:52:0e:db:82:07

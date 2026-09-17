@@ -1,0 +1,4 @@
+# Direcciones IP literales (filtrado localhost/documentacion)
+120.0.0.0
+122.0.0.0
+124.0.0.0
