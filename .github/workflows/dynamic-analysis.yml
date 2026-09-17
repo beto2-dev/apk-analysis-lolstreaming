@@ -1,0 +1,122 @@
+name: Analisis dinamico en emulador Android
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  analisis-dinamico:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar dependencias del host
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq wget unzip xz-utils python3-pip
+          python3 -m pip install --quiet frida-tools mitmproxy
+          echo "frida instalado: $(frida --version)"
+
+      - name: Configurar SDK de Android
+        run: |
+          ANDROID_HOME=$HOME/android-sdk
+          mkdir -p "$ANDROID_HOME/cmdline-tools"
+          wget -q https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O /tmp/clt.zip
+          unzip -q /tmp/clt.zip -d "$ANDROID_HOME/cmdline-tools"
+          mv "$ANDROID_HOME/cmdline-tools/cmdline-tools" "$ANDROID_HOME/cmdline-tools/latest"
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null 2>&1 || true
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platform-tools" "emulator" "build-tools;30.0.3" "system-images;android-30;google_apis;x86_64" >/dev/null
+          echo "ANDROID_HOME=$ANDROID_HOME" >> "$GITHUB_ENV"
+
+      - name: Crear dispositivo virtual (AVD)
+        run: |
+          echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd -n auditoria -k "system-images;android-30;google_apis;x86_64" -d pixel_4
+
+      - name: Iniciar mitmdump en el host
+        run: |
+          mkdir -p dynamic/captures dynamic/logs dynamic/files_app
+          nohup mitmdump --listen-host 127.0.0.1 --listen-port 8080 \
+            -w dynamic/captures/traffic.mitm \
+            -s scripts/dynamic/flow_logger.py > dynamic/logs/mitmdump.txt 2>&1 &
+          sleep 5
+          pgrep -a mitmdump || (echo "mitmdump no arranco" && cat dynamic/logs/mitmdump.txt)
+
+      - name: Arrancar emulador (headless con proxy hacia el host)
+        run: |
+          ADB="$ANDROID_HOME/platform-tools/adb"
+          nohup "$ANDROID_HOME/emulator/emulator" -avd auditoria \
+            -no-window -no-audio -no-boot-anim -no-snapshot -no-metrics \
+            -gpu swiftshader_indirect -writable-system \
+            -http-proxy http://10.0.2.2:8080 > dynamic/logs/emulator.txt 2>&1 &
+          timeout 600 "$ADB" wait-for-device
+          for i in $(seq 1 90); do
+            B=$("$ADB" shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
+            if [ "$B" = "1" ]; then echo "boot completado tras $((i*10))s"; break; fi
+            sleep 10
+          done
+          "$ADB" devices
+
+      - name: Instalar CA de mitmproxy en el almacen del sistema
+        run: |
+          ADB="$ANDROID_HOME/platform-tools/adb"
+          "$ADB" root && sleep 5
+          "$ADB" remount || true
+          H=$(openssl x509 -inform PEM -subject_hash_old -in ~/.mitmproxy/mitmproxy-ca.pem | head -1)
+          "$ADB" push ~/.mitmproxy/mitmproxy-ca-cert.pem /system/etc/security/cacerts/"${H}".0
+          "$ADB" shell chmod 644 /system/etc/security/cacerts/"${H}".0
+          "$ADB" shell 'ls /system/etc/security/cacerts | wc -l'
+
+      - name: Desplegar frida-server en el dispositivo
+        run: |
+          ADB="$ANDROID_HOME/platform-tools/adb"
+          FV=$(python3 -c "import frida; print(frida.__version__)")
+          wget -q "https://github.com/frida/frida/releases/download/${FV}/frida-server-${FV}-android-x86_64.xz" -O /tmp/fs.xz
+          xz -d -f /tmp/fs.xz
+          "$ADB" push /tmp/fs /data/local/tmp/frida-server
+          "$ADB" shell chmod 755 /data/local/tmp/frida-server
+          nohup "$ADB" shell 'nohup /data/local/tmp/frida-server >/dev/null 2>&1 &' >/dev/null 2>&1 &
+          sleep 6
+          frida-ps -U | head -8
+
+      - name: Instalar y lanzar la aplicacion instrumentada
+        run: |
+          ADB="$ANDROID_HOME/platform-tools/adb"
+          PKG=$("$ANDROID_HOME/build-tools/30.0.3/aapt" dump badging sample.apk | sed -n "s/^package: name='\([^']*\)'.*/\1/p")
+          echo "paquete instalado: $PKG"
+          echo "PKG=$PKG" >> "$GITHUB_ENV"
+          "$ADB" install -r sample.apk
+          timeout 330 python3 scripts/frida/run_hooks.py "$PKG" scripts/frida/hooks.js dynamic/logs/frida_hooks.txt 300 \
+            || { echo "frida fallo, lanzamiento alternativo con monkey"; "$ADB" shell monkey -p "$PKG" -c android.intent.category.LAUNCHER 1; }
+
+      - name: Tiempo de observacion y recoleccion de datos
+        run: |
+          ADB="$ANDROID_HOME/platform-tools/adb"
+          sleep 90
+          "$ADB" logcat -d -v time > dynamic/logs/logcat.txt 2>&1 || true
+          "$ADB" logcat -d -b crash -v time > dynamic/logs/logcat_crash.txt 2>&1 || true
+          "$ADB" root && sleep 3
+          "$ADB" shell "find /data/data/$PKG -type f" > dynamic/logs/archivos_app.txt 2>&1 || true
+          "$ADB" shell "cd /data/data && tar -cf - --exclude='*/cache/*' $PKG 2>/dev/null" | tar -xf - -C dynamic/files_app 2>/dev/null || true
+          echo "archivos recuperados:"; find dynamic/files_app -type f | head -30
+          pkill -INT mitmdump || true
+          sleep 5
+          find dynamic -type f -size +15M -exec gzip -f {} \; || true
+
+      - name: Subir artefactos de la ejecucion
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultados-dinamicos
+          path: dynamic/
+          if-no-files-found: warn
+
+      - name: Publicar resultados en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dynamic/ || true
+          git commit -m "Resultados de analisis dinamico: capturas de trafico, logcat y hooks de Frida" || echo "sin cambios que publicar"
+          git push
