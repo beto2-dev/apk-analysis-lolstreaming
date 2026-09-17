@@ -40,8 +40,6 @@ jobs:
           echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd -n auditoria -k "system-images;android-30;google_apis;x86_64" -d pixel_4 --force
           echo "ANDROID_USER_HOME=$ANDROID_USER_HOME" >> "$GITHUB_ENV"
           echo "ANDROID_AVD_HOME=$ANDROID_AVD_HOME" >> "$GITHUB_ENV"
-          "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" list avd || true
-          ls -la "$ANDROID_AVD_HOME"
 
       - name: Habilitar acceso a KVM
         run: |
@@ -49,7 +47,6 @@ jobs:
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
-          ls -l /dev/kvm
           "$ANDROID_HOME/emulator/emulator" -accel-check || true
 
       - name: Iniciar mitmdump en el host
@@ -64,13 +61,11 @@ jobs:
       - name: Arrancar emulador (headless con proxy hacia el host)
         run: |
           ADB="$ANDROID_HOME/platform-tools/adb"
-          "$ADB" kill-server || true
           "$ADB" start-server || true
           if ! "$ANDROID_HOME/emulator/emulator" -list-avds 2>/dev/null | grep -qx auditoria; then
-            echo "AVD no visible para el emulador; recreando en $ANDROID_AVD_HOME"
+            echo "AVD no visible para el emulador; recreando"
             mkdir -p "$ANDROID_AVD_HOME"
             echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd -n auditoria -k "system-images;android-30;google_apis;x86_64" -d pixel_4 --force
-            "$ANDROID_HOME/emulator/emulator" -list-avds || true
           fi
           nohup "$ANDROID_HOME/emulator/emulator" -avd auditoria \
             -no-window -no-audio -no-boot-anim -no-snapshot -no-metrics \
@@ -79,109 +74,81 @@ jobs:
           timeout 420 "$ADB" wait-for-device || true
           BOOT=0
           for i in $(seq 1 60); do
-            B=$("$ADB" shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
+            B=$(timeout 15 "$ADB" shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
             if [ "$B" = "1" ]; then echo "boot completado tras $((i*10))s"; BOOT=1; break; fi
             sleep 10
           done
           if [ "$BOOT" != "1" ]; then
             echo "## el emulador no completo el arranque; registro del emulador:"
             tail -60 dynamic/logs/emulator.txt || true
-            "$ADB" devices || true
             exit 1
           fi
           "$ADB" devices
 
-      - name: Instalar CA de mitmproxy en el almacen del sistema
+      - name: Instalar CA de mitmproxy (bind mount, sin reinicio)
         run: |
           ADB="$ANDROID_HOME/platform-tools/adb"
           H=$(openssl x509 -inform PEM -subject_hash_old -in ~/.mitmproxy/mitmproxy-ca.pem | head -1)
-          "$ADB" root && sleep 5
-          # Estrategia 1: remontaje directo (imagenes userdebug)
-          "$ADB" shell "mount -o rw,remount /" || true
-          "$ADB" shell "mount -o rw,remount /system" || true
-          if "$ADB" shell "touch /system/etc/security/cacerts/.prueba && rm -f /system/etc/security/cacerts/.prueba" 2>/dev/null; then
-            echo "/system escribible sin reinicio"
-          else
-            # Estrategia 2: remount + reinicio del invitado con servidor adb nuevo
-            echo "se requiere remount con overlayfs y reinicio"
-            "$ADB" remount || true
-            "$ADB" reboot || true
-            sleep 10
-            "$ADB" kill-server || true
-            "$ADB" start-server || true
-            timeout 240 "$ADB" wait-for-device || true
-            for i in $(seq 1 60); do
-              B=$("$ADB" shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
-              if [ "$B" = "1" ]; then echo "reinicio completado tras $((i*5))s"; break; fi
-              sleep 5
-            done
-            "$ADB" root && sleep 5
-            "$ADB" remount || true
-          fi
-          "$ADB" push ~/.mitmproxy/mitmproxy-ca-cert.pem /system/etc/security/cacerts/"${H}".0 \
-            || echo "advertencia: CA no instalada; el trafico TLS no se descifrara (mitmdump seguira registrando dominios)"
-          "$ADB" shell chmod 644 /system/etc/security/cacerts/"${H}".0 2>/dev/null || true
-          "$ADB" shell "ls -la /system/etc/security/cacerts/${H}.0" || echo "confirmado: CA ausente en el almacen del sistema"
-          # estabilizar la conexion adb tras el remontaje/reinicio
-          for i in 1 2 3 4 5 6; do
-            S=$("$ADB" get-state 2>/dev/null | tr -d '\r')
-            if [ "$S" = "device" ]; then echo "dispositivo estable"; break; fi
+          echo "hash del certificado: $H"
+          timeout 30 "$ADB" root || true
+          sleep 6
+          # copia del almacen de certificados a /data y montaje por bind
+          timeout 30 "$ADB" shell "rm -rf /data/local/tmp/cacerts && mkdir -p /data/local/tmp/cacerts" || true
+          timeout 60 "$ADB" shell "cp /system/etc/security/cacerts/* /data/local/tmp/cacerts/ 2>/dev/null; ls /data/local/tmp/cacerts | wc -l"
+          timeout 30 "$ADB" push ~/.mitmproxy/mitmproxy-ca-cert.pem /data/local/tmp/cacerts/"${H}".0
+          timeout 30 "$ADB" shell "chmod 644 /data/local/tmp/cacerts/*; chown root:root /data/local/tmp/cacerts/*" || true
+          timeout 30 "$ADB" shell "mount -o bind /data/local/tmp/cacerts /system/etc/security/cacerts" \
+            && echo "bind mount aplicado" \
+            || echo "advertencia: bind mount rechazado; el trafico TLS no se descifrara"
+          timeout 30 "$ADB" shell "ls -la /system/etc/security/cacerts/${H}.0" \
+            || echo "confirmado: CA no visible en el almacen del sistema"
+          # estabilizar adb
+          for i in 1 2 3; do
+            S=$(timeout 15 "$ADB" get-state 2>/dev/null | tr -d '\r')
+            [ "$S" = "device" ] && break
             "$ADB" kill-server || true; "$ADB" start-server || true
             timeout 60 "$ADB" wait-for-device || true
             sleep 5
           done
+          "$ADB" devices
 
       - name: Desplegar frida-server en el dispositivo
         run: |
           ADB="$ANDROID_HOME/platform-tools/adb"
-          for i in 1 2 3 4 5 6; do
-            S=$("$ADB" get-state 2>/dev/null | tr -d '\r')
-            if [ "$S" = "device" ]; then echo "dispositivo listo"; break; fi
-            echo "dispositivo $S; recuperando conexion adb (intento $i)"
-            "$ADB" kill-server || true; "$ADB" start-server || true
-            timeout 60 "$ADB" wait-for-device || true
-            sleep 5
-          done
           FV=$(python3 -c "import frida; print(frida.__version__)")
           echo "version de frida: $FV"
           wget -q "https://github.com/frida/frida/releases/download/${FV}/frida-server-${FV}-android-x86_64.xz" -O /tmp/fs.xz
           xz -d -f /tmp/fs.xz
-          "$ADB" push /tmp/fs /data/local/tmp/frida-server
-          "$ADB" shell chmod 755 /data/local/tmp/frida-server
-          "$ADB" shell 'nohup /data/local/tmp/frida-server >/dev/null 2>&1 &' || true
+          timeout 60 "$ADB" push /tmp/fs /data/local/tmp/frida-server
+          timeout 30 "$ADB" shell chmod 755 /data/local/tmp/frida-server
+          timeout 30 "$ADB" shell 'nohup /data/local/tmp/frida-server >/dev/null 2>&1 &' || true
           sleep 6
-          "$ADB" shell 'ps -A | grep frida' || echo "advertencia: frida-server no visible en ps"
-          frida-ps -U | head -8 || echo "advertencia: frida-ps sin respuesta"
+          timeout 30 "$ADB" shell 'ps -A | grep frida' || echo "advertencia: frida-server no visible en ps"
+          timeout 60 frida-ps -U | head -8 || echo "advertencia: frida-ps sin respuesta"
 
       - name: Instalar y lanzar la aplicacion instrumentada
         run: |
           ADB="$ANDROID_HOME/platform-tools/adb"
-          for i in 1 2 3 4 5 6; do
-            S=$("$ADB" get-state 2>/dev/null | tr -d '\r')
-            if [ "$S" = "device" ]; then echo "dispositivo listo"; break; fi
-            echo "dispositivo $S; recuperando conexion adb (intento $i)"
-            "$ADB" kill-server || true; "$ADB" start-server || true
-            timeout 60 "$ADB" wait-for-device || true
-            sleep 5
-          done
           PKG=$("$ANDROID_HOME/build-tools/30.0.3/aapt" dump badging sample.apk | sed -n "s/^package: name='\([^']*\)'.*/\1/p")
           echo "paquete instalado: $PKG"
           echo "PKG=$PKG" >> "$GITHUB_ENV"
-          "$ADB" install -r sample.apk
+          timeout 300 "$ADB" install -r sample.apk
           timeout 330 python3 scripts/frida/run_hooks.py "$PKG" scripts/frida/hooks.js dynamic/logs/frida_hooks.txt 300 \
-            || { echo "frida fallo, lanzamiento alternativo con monkey"; "$ADB" shell monkey -p "$PKG" -c android.intent.category.LAUNCHER 1; }
+            || { echo "frida fallo, lanzamiento alternativo con monkey"; timeout 60 "$ADB" shell monkey -p "$PKG" -c android.intent.category.LAUNCHER 1; }
 
       - name: Tiempo de observacion y recoleccion de datos
         if: always()
         run: |
           ADB="$ANDROID_HOME/platform-tools/adb"
+          PKG="${PKG:-com.example.lol}"
           sleep 90
-          "$ADB" logcat -d -v time > dynamic/logs/logcat.txt 2>&1 || true
-          "$ADB" logcat -d -b crash -v time > dynamic/logs/logcat_crash.txt 2>&1 || true
-          "$ADB" root && sleep 3 || true
-          "$ADB" shell "find /data/data/$PKG -type f" > dynamic/logs/archivos_app.txt 2>&1 || true
-          "$ADB" shell "cd /data/data && tar -cf - --exclude='*/cache/*' $PKG 2>/dev/null" | tar -xf - -C dynamic/files_app 2>/dev/null || true
-          echo "archivos recuperados:"; find dynamic/files_app -type f | head -30
+          timeout 90 "$ADB" logcat -d -v time > dynamic/logs/logcat.txt 2>&1 || true
+          timeout 60 "$ADB" logcat -d -b crash -v time > dynamic/logs/logcat_crash.txt 2>&1 || true
+          timeout 30 "$ADB" root || true
+          sleep 3
+          timeout 60 "$ADB" shell "find /data/data/$PKG -type f" > dynamic/logs/archivos_app.txt 2>&1 || true
+          timeout 90 "$ADB" shell "cd /data/data && tar -cf - --exclude='*/cache/*' $PKG 2>/dev/null" | tar -xf - -C dynamic/files_app 2>/dev/null || true
+          echo "archivos recuperados:"; find dynamic/files_app -type f | head -30 || true
           pkill -INT mitmdump || true
           sleep 5
           find dynamic -type f -size +15M -exec gzip -f {} \; || true
