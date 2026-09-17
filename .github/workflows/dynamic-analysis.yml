@@ -34,7 +34,14 @@ jobs:
 
       - name: Crear dispositivo virtual (AVD)
         run: |
-          echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd -n auditoria -k "system-images;android-30;google_apis;x86_64" -d pixel_4
+          export ANDROID_USER_HOME=$HOME/.android
+          export ANDROID_AVD_HOME=$HOME/.android/avd
+          mkdir -p "$ANDROID_AVD_HOME"
+          echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd -n auditoria -k "system-images;android-30;google_apis;x86_64" -d pixel_4 --force
+          echo "ANDROID_USER_HOME=$ANDROID_USER_HOME" >> "$GITHUB_ENV"
+          echo "ANDROID_AVD_HOME=$ANDROID_AVD_HOME" >> "$GITHUB_ENV"
+          "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" list avd || true
+          ls -la "$ANDROID_AVD_HOME"
 
       - name: Habilitar acceso a KVM
         run: |
@@ -59,6 +66,12 @@ jobs:
           ADB="$ANDROID_HOME/platform-tools/adb"
           "$ADB" kill-server || true
           "$ADB" start-server || true
+          if ! "$ANDROID_HOME/emulator/emulator" -list-avds 2>/dev/null | grep -qx auditoria; then
+            echo "AVD no visible para el emulador; recreando en $ANDROID_AVD_HOME"
+            mkdir -p "$ANDROID_AVD_HOME"
+            echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd -n auditoria -k "system-images;android-30;google_apis;x86_64" -d pixel_4 --force
+            "$ANDROID_HOME/emulator/emulator" -list-avds || true
+          fi
           nohup "$ANDROID_HOME/emulator/emulator" -avd auditoria \
             -no-window -no-audio -no-boot-anim -no-snapshot -no-metrics \
             -gpu swiftshader_indirect -writable-system \
