@@ -132,11 +132,14 @@ jobs:
           PKG=$("$ANDROID_HOME/build-tools/30.0.3/aapt" dump badging sample.apk | sed -n "s/^package: name='\([^']*\)'.*/\1/p")
           echo "paquete instalado: $PKG"
           echo "PKG=$PKG" >> "$GITHUB_ENV"
-          timeout 300 "$ADB" install -r sample.apk
+          # forzar la ABI del APK (solo incluye librerias armeabi-v7a)
+          timeout 300 "$ADB" install --abi armeabi-v7a -r sample.apk || timeout 300 "$ADB" install -r sample.apk
           echo "ABIs soportados por la imagen:"; timeout 30 "$ADB" shell getprop ro.product.cpu.abilist || true
-          nohup timeout 420 "$ADB" logcat -v time > dynamic/logs/logcat_ejecucion.txt 2>&1 &
+          nohup timeout 600 "$ADB" logcat -v time > dynamic/logs/logcat_ejecucion.txt 2>&1 &
           sleep 5
-          timeout 330 python3 scripts/frida/run_hooks.py "$PKG" scripts/frida/hooks.js dynamic/logs/frida_hooks.txt 300 \
+          # interaccion automatica en paralelo durante la ventana de instrumentacion
+          (sleep 40; timeout 160 "$ADB" shell monkey -p "$PKG" --throttle 300 --pct-syskeys 0 400 > dynamic/logs/monkey.txt 2>&1) &
+          timeout 340 python3 scripts/frida/run_hooks.py "$PKG" scripts/frida/hooks.js dynamic/logs/frida_hooks.txt 300 \
             || { echo "frida fallo, lanzamiento alternativo con monkey"; timeout 60 "$ADB" shell monkey -p "$PKG" -c android.intent.category.LAUNCHER 1; }
           echo "procesos de la app tras la ejecucion:"; timeout 30 "$ADB" shell "pidof $PKG" || echo "(la app no esta en ejecucion)"
 
